@@ -1,10 +1,35 @@
-syntax "ruby" "\.rb$|Rakefile$"
+syntax "ruby" "\.rb$|Gemfile$|config.ru$|Rakefile$|Capfile$|Vagrantfile$"
+header "^#!.*/(env +)?ruby( |$)"
 
 KEYWORD: "\<(BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\>"
+WARNING:  "(XXX|FIXME|\?\?\?)"
+VARIABLE: "(\$|@|@@)?\<[A-Z]+[0-9A-Z_a-z]*"
+ESCAPE: "`[^`]*`" "%x\{[^}]*\}"
 STRING:  "(^|[[:space:]]):[A-Za-z0-9_]+\>"
 REGEXP:  "/([^/]|(\\/))*/[iomx]*" "%r\{([^}]|(\\}))*\}[iomx]*"
+
+## Ruby "symbols"
+NUMBER: "\<[0-9]+\>"
+## Some unique things we want to stand out
+TAG: "\<(__FILE__|__LINE__)\>"
+
+## Strings, double-quoted
+STRING:  ""([^"]|(\\"))*"" "%[QW]?\{[^}]*\}" "%[QW]?\([^)]*\)" "%[QW]?<[^>]*>" "%[QW]?\[[^]]*\]" "%[QW]?\$[^$]*\$" "%[QW]?\^[^^]*\^" "%[QW]?![^!]*!"
+
+## Expression substitution.  These go inside double-quoted strings,
+## "like #{this}".
+SECTION: "#\{[^}]*\}"
+
+## Strings, single-quoted
+STRING: "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw]\[[^]]*\]" "%[qw]\$[^$]*\$" "%[qw]\^[^^]*\^" "%[qw]![^!]*!"
+
+## "Here" docs
+TAG: start="<<-?'?EOT'?" end="^EOT"
+
 +STRING
 +HASHCOMMENT
 COMMENT: start="^=begin$" end="^=end$"
 +TODO
 +LINT
+
+
