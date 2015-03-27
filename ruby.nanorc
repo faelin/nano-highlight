@@ -3,9 +3,8 @@ header "^#!.*/(env +)?ruby( |$)"
 
 KEYWORD: "\<(BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\>"
 WARNING:  "(XXX|FIXME|\?\?\?)"
-VARIABLE: "(\$|@|@@)?\<[A-Z]+[0-9A-Z_a-z]*"
-ESCAPE: "`[^`]*`" "%x\{[^}]*\}"
 STRING:  "(^|[[:space:]]):[A-Za-z0-9_]+\>"
+ESCAPE: "`[^`]*`" "%x\{[^}]*\}"
 REGEXP:  "/([^/]|(\\/))*/[iomx]*" "%r\{([^}]|(\\}))*\}[iomx]*"
 
 ## Ruby "symbols"
@@ -19,6 +18,7 @@ STRING:  ""([^"]|(\\"))*"" "%[QW]?\{[^}]*\}" "%[QW]?\([^)]*\)" "%[QW]?<[^>]*>" "
 ## Expression substitution.  These go inside double-quoted strings,
 ## "like #{this}".
 SECTION: "#\{[^}]*\}"
+VARIABLE: "(\$|@|@@)?\<[A-Z]+[0-9A-Z_a-z]*"
 
 ## Strings, single-quoted
 STRING: "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw]\[[^]]*\]" "%[qw]\$[^$]*\$" "%[qw]\^[^^]*\^" "%[qw]![^!]*!"
@@ -26,7 +26,6 @@ STRING: "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw
 ## "Here" docs
 TAG: start="<<-?'?EOT'?" end="^EOT"
 
-+STRING
 +HASHCOMMENT
 COMMENT: start="^=begin$" end="^=end$"
 +TODO
