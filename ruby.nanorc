@@ -1,10 +1,36 @@
-syntax "ruby" "\.rb$|Rakefile$"
+syntax "ruby" "\.rb$|Gemfile$|config.ru$|Rakefile$|Capfile$|Vagrantfile$"
+header "^#!.*/(env +)?ruby( |$)"
 
+## Asciibetical list of reserved words
 KEYWORD: "\<(BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\>"
-STRING:  "(^|[[:space:]]):[A-Za-z0-9_]+\>"
-REGEXP:  "/([^/]|(\\/))*/[iomx]*" "%r\{([^}]|(\\}))*\}[iomx]*"
-+STRING
-+HASHCOMMENT
-COMMENT: start="^=begin$" end="^=end$"
-+TODO
+## Constants
+VARIABLE: "(\$|@|@@)?\<[A-Z]+[0-9A-Z_a-z]*"
+## Ruby "symbols"
+REGEXP:  "([ 	]|^):[0-9A-Z_]+\>"
+## Some unique things we want to stand out
+TAG: "\<(__FILE__|__LINE__)\>"
+## Regular expressions
+REGEXP: "/([^/]|(\\/))*/[iomx]*" "%r\{([^}]|(\\}))*\}[iomx]*"
+## Shell command expansion is in `backticks` or like %x{this}.  These are
+## "double-quotish" (to use a perlism).
+FUNCTION: "`[^`]*`" "%x\{[^}]*\}"
+
+## Strings, double-quoted
+STRING: ""([^"]|(\\"))*"" "%[QW]?\{[^}]*\}" "%[QW]?\([^)]*\)" "%[QW]?<[^>]*>" "%[QW]?\[[^]]*\]" "%[QW]?\$[^$]*\$" "%[QW]?\^[^^]*\^" "%[QW]?![^!]*!"
+## Expression substitution.  These go inside double-quoted strings,
+## "like #{this}".
+TYPE: "#\{[^}]*\}"
+## Strings, single-quoted
+STRING: "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw]\[[^]]*\]" "%[qw]\$[^$]*\$" "%[qw]\^[^^]*\^" "%[qw]![^!]*!"
+## Comments
+COMMENT: "#[^{].*$" "#$"
+BOOLEAN: "##[^{].*$" "##$"
+## "Here" docs
+WARNING: start="<<-?'?EOT'?" end="^EOT"
+## Some common markers
+WARNING: "(XXX|TODO|FIXME|\?\?\?)"
+
+## numbers
+NUMBER: "\<[0-9]+\>"
+
 +LINT
