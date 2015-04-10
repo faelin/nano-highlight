@@ -1,16 +1,15 @@
 syntax "cython" "\.(pyx|pxd|pyi)$"
 
 +FUNCTION
-KEYWORD:  "\<(and|as|assert|break|class|continue|def|del|elif|else|except)\>"
-KEYWORD:  "\<(exec|finally|for|from|global|if|import|in|is|lambda|not|or)\>"
-KEYWORD:  "\<(pass|print|raise|return|try|while|with|yield|None)\>"
+KEYWORD:  "\<(as|assert|class|def|del|elif|else|except|exec|finally|for|from|global|if|import|lambda|pass|print|raise|try|while|with|yield|None)\>"
 KEYWORD:  "\<(DEF|ELIF|ELSE|IF)\>"
+JUMP:     "\<(break|continue|return)\>"
 
 KEYWORD:  "\<(cp?def( inline)?|cimport|cppclass|ctypedef|extern|include)\>"
 KEYWORD:  "\<(namespace|property|struct)\>"
 TYPE:     "\<(bint|char|double|int|public|void|unsigned)\>"
 
-OPERATOR: "[.:;,+*|=!\%@<>/&-]"
+OPERATOR: "[-+*/%|&=!<>\@.:;,]\<(and|not|or|is|in)\>"
 MACRO:    "@[A-Za-z0-9_]+"
 SECTION:  "__[A-Za-z0-9_]+__"
 BOOLEAN:  "\<(True|False)\>"
