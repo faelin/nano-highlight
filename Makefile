@@ -1,9 +1,9 @@
-LANGS  = awk c cmake coffeescript colortest csharp css cython default dot \
-         email git glsl go html ini inputrc java javascript json keymap \
-         kickstart ledger lisp lua makefile man markdown mpdconf nanorc \
-         nginx patch peg perl php pkgbuild pkg-config po privoxy properties \
+LANGS  = asm awk c cmake coffeescript colortest csharp css cython default \
+         diff dot email git glsl go html ini inputrc java javascript json \
+         keymap kickstart ledger lisp lua makefile man markdown mpdconf nanorc \
+         nginx patch peg perl php pkg-config pkgbuild po privoxy properties \
          python rpmspec ruby sed shell sql systemd tex vala vi xml \
-         xresources yaml yum diff
+         xresources yaml yum
 
 MIXINS = $(wildcard mixins/*.nanorc)
 FILES  = $(addsuffix .nanorc, $(LANGS))
