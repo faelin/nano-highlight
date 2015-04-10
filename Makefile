@@ -9,7 +9,7 @@ MIXINS = $(wildcard mixins/*.nanorc)
 FILES  = $(addsuffix .nanorc, $(LANGS))
 ALL    = $(addprefix build/, $(FILES)) build/ALL.nanorc
 DIR    = $(HOME)/.nano/syntax
-THEME  = theme.sed
+THEME  = custom-theme.sed
 FILTER = sed -f mixins.sed | sed -f $(THEME)
 
 all: $(ALL)
@@ -48,7 +48,7 @@ ifeq ($(shell printf "2.1.5\n$(NANOVER)" | sort -nr | head -1),2.1.5)
 endif
 
 ifdef TEXT
-  FILTER += | sed -e 's|^color \(bright\)\{0,1\}black|color \1$(TEXT)|'
+  FILTER += | sed -e 's|^color \(bright\)\{0,1\}white|color \1$(TEXT)|'
 endif
 
 ifdef BSDREGEX
