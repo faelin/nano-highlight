@@ -1,0 +1,28 @@
+## x86 assembly code
+syntax "asm" "\.(S|s|asm)$"
+magic "[Aa]ssembl(y|er)"
+
+MACRO: "\<[A-Z_]{2,}\>"
+SECTION: "\<(data|subsection|text)\>"
+KEYWORD "\<(align|file|globl|global|hidden|section|size|type|weak)\>"
+KEYWORD: "^[[:space:]]*#[[:space:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
+JUMP: "\<(jmp|je|jne|jns|js|jz|jnz)\>"
+FUNCTION: "\<(call|xor|mov|lea|cmp|push|ror|rol|or|pop|xchg|inc|dec|add|sub|mul|div|imul|idiv)\>"
+MACRO: "^[[:space:]]*[.0-9A-Z_]*:"
+
+## Registers
+OPERATOR: "\<(eax|ebx|ecx|edx|esp|esi|edi|ax|ah|al|bx|bh|bl|cx|ch|cl|dx|dh|dl)\>"
+
+## Data Types
+TYPE: "\<(ascii|asciz|byte|double|float|hword|int|long|short|single|struct|word)\>"
+
+## Highlight strings (note: VERY resource intensive)
+STRING:     "<[^= 	]*>" ""(\\.|[^"])*""
+STRING:     start=""(\\.|[^"])*\\[[:space:]]*$" end="^(\\.|[^"])*""
+
+## Highlight comments
+COMMENT:    ";.*"
+COMMENT:     start="/\*" end="\*/"
+
+## Highlight trailing whitespace
++LINT
