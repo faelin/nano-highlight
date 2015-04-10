@@ -2,9 +2,9 @@ syntax "python" "\.py$" "jhbuildrc$"
 header "^#!.*/(env +)?python[-0-9._]*( |$)"
 
 KEYWORD:  "\<(as|assert|class|def|del|elif|else|except|exec|finally|for|from|global|if|import|lambda|map|pass|print|raise|try|while|with|yield|None)\>"
-TYPE: "\<(str|bytearray|bytes|list|tuple|set|frozenset|dict|int|float|complex|bool)\>"
 +FUNCTION
-JUMP: "\<(break|continue|return)\>"
+TYPE:     "\<(str|bytearray|bytes|list|tuple|set|frozenset|dict|int|float|complex|bool)\>"
+JUMP:     "\<(break|continue|return)\>"
 OPERATOR: "[-+*/|=%<>&~^]|\<(and|not|or|is|in)\>"
 MACRO:    "@[A-Za-z0-9_]+"
 SECTION:  "__[A-Za-z0-9_]+__"
