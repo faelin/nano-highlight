@@ -7,7 +7,9 @@ Description
 The syntax highlighting definitions that come bundled with nano are of
 pretty poor quality. This is an attempt at providing a good set of accurate
 syntax definitions to replace and expand the defaults, as well as provide
-standards for syntax highlighting across file types.
+standards for syntax highlighting across file types. This project will
+eventually attempt to merge work done by ileathan on nano-highlight which
+itself collects work done by nanosyntax (new bsd license) and others.
 
 Installation
 ------------
