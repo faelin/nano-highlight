@@ -6,7 +6,7 @@ KEYWORD:  "\<(as|assert|class|def|del|elif|else|except|exec|finally|for|from|glo
 JUMP:     "\<(break|continue|return)\>"
 TYPE:     "\<(str|bytearray|bytes|list|tuple|set|frozenset|dict|int|float|complex|bool)\>"
 
-OPERATOR: "[-+*/%|&=!<>~^]|\<(and|not|or|is|in)\>"
+OPERATOR: "[-+*/%|&=~!<>^]|\<(and|not|or|is|in)\>"
 MACRO:    "@[A-Za-z0-9_]+"
 SECTION:  "__[A-Za-z0-9_]+__"
 BOOLEAN:  "\<(True|False)\>"
