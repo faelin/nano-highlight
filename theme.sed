@@ -12,7 +12,7 @@ s|^~KEYWORD:|icolor brightblack|
 s|^MACRO:|color brightyellow|
 s|^REGEXP:|color magenta|
 s|^ESCAPE:|color magenta|
-s|^DELIMITERS:|color brightgreen|
+s|^DELIMITER:|color brightgreen|
 s|^JUMP:|color brightred|
 s|^WARNING:|color brightwhite,red|
 s|^SECTION:|color brightmagenta|

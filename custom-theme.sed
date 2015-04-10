@@ -13,7 +13,7 @@ s|^OPERATOR:|color red|
 s|^COMMENT:|color cyan|
 s|^REGEXP:|color black,cyan|
 s|^ESCAPE:|color black,cyan|
-s|^DELIMITERS:|color brightred|
+s|^DELIMITER:|color brightred|
 s|^WARNING:|color brightwhite,red|
 s|^SECTION:|color brightmagenta|
 s|^TAG:|color brightmagenta|
