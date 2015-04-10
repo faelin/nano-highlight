@@ -1,7 +1,7 @@
 A small program that calculates and prints terms of the Fibonacci series
 
 ; fibo.asm
-; assemble using nasm:   
+; assemble using nasm:
 ; nasm -o fibo.com -f bin fibo.asm
 ;
 ;****************************************************************************
@@ -9,41 +9,41 @@ A small program that calculates and prints terms of the Fibonacci series
 ;****************************************************************************
 ; You can adjust this upward but the upper limit is around 150000 terms.
 ; the limitation is due to the fact that we can only address 64K of memory
-; in a DOS com file, and the program is about 211 bytes long and the 
+; in a DOS com file, and the program is about 211 bytes long and the
 ; address space starts at 100h.  So that leaves roughly 65000 bytes to
 ; be shared by the two terms (num1 and num2 at the end of this file).  Since
 ; they're of equal size, that's about 32500 bytes each, and the 150000th
-; term of the Fibonacci sequence is 31349 digits long. 
-; 
+; term of the Fibonacci sequence is 31349 digits long.
+;
 	maxTerms    equ 15000	; number of terms of the series to calculate
 
 ;****************************************************************************
 ; Number digits to use.  This is based on a little bit of tricky math.
 ; One way to calculate F(n) (i.e. the nth term of the Fibonacci seeries)
 ; is to use the equation int(phi^n/sqrt(5)) where ^ means exponentiation
-; and phi = (1 + sqrt(5))/2, the "golden number" which is a constant about 
-; equal to 1.618.  To get the number of decimal digits, we just take the 
-; base ten log of this number.  We can very easily see how to get the 
-; base phi log of F(n) -- it's just n*lp(phi)+lp(sqrt(5)), where lp means 
-; a base phi log.  To get the base ten log of this we just divide by the 
+; and phi = (1 + sqrt(5))/2, the "golden number" which is a constant about
+; equal to 1.618.  To get the number of decimal digits, we just take the
+; base ten log of this number.  We can very easily see how to get the
+; base phi log of F(n) -- it's just n*lp(phi)+lp(sqrt(5)), where lp means
+; a base phi log.  To get the base ten log of this we just divide by the
 ; base ten log of phi.  If we work through all that math, we get:
 ;
 ; digits = terms * log(phi) + log(sqrt(5))/log(phi)
 ;
-; the constants below are slightly high to assure that we always have 
+; the constants below are slightly high to assure that we always have
 ; enough room.  As mentioned above the 150000th term has 31349 digits,
 ; but this formula gives 31351.  Not too much waste there, but I'd be
 ; a little concerned about the stack!
 ;
-        digits	    equ (maxTerms*209+1673)/1000	
+        digits      equ (maxTerms*209+1673)/1000
 
 ; this is just the number of digits for the term counter
 	cntDigits   equ 6	; number of digits for counter
 
-        org     100h            ; this is a DOS com file
+        org         100h        ; this is a DOS com file
 ;****************************************************************************
 ;****************************************************************************
-main:	
+main:
 ; initializes the two numbers and the counter.  Note that this assumes
 ; that the counter and num1 and num2 areas are contiguous!
 ;
@@ -104,7 +104,7 @@ main:
 ;****************************************************************************
 PrintLine:
 	mov	dx,eol		; print combined CRLF and msg1
-	mov	cx,msg1len+eollen   ; 
+	mov	cx,msg1len+eollen   ;
 	call	PrintString	;
 
 	mov	di,counter	; print counter
@@ -116,14 +116,14 @@ PrintLine:
 	mov	dx,msg2		; print msg2
 	mov	cx,msg2len	;
 	call	PrintString	;
-	
+
 	mov	di,bp		; recall address of number
 	mov	cx,digits	;
 	; deliberately fall through to PrintNumericString
 
 ;****************************************************************************
 ;
-; PrintNumericString 
+; PrintNumericString
 ; prints the numeric string at DS:DI, suppressing leading zeroes
 ; max length is CX
 ;
@@ -143,8 +143,8 @@ PrintNumericString:
 	; deliberately fall through to PrintString
 
 ;****************************************************************************
-; 
-; PrintString 
+;
+; PrintString
 ; prints the string at DS:DX with length CX to stdout
 ;
 ; INPUT:     ds:dx ==> string, cx = string length
@@ -175,7 +175,7 @@ AddNumbers:
 	pushf			; save carry flag
 .top
 	mov	ax,0f0fh	; convert from ASCII BCD to BCD
-	and  	al,[si]		; get next digit of number2 in al
+	and	al,[si]		; get next digit of number2 in al
 	and	ah,[di]		; get next digit of number1 in ah
 	popf			; recall carry flag
 	adc	al,ah		; add these digits
@@ -189,7 +189,7 @@ AddNumbers:
 	ret			;
 
 ;****************************************************************************
-; 
+;
 ; IncrementCount
 ; increments a multidigit term counter by one
 ;
@@ -216,7 +216,7 @@ IncrementCount:
 	loop	.top		;
 	popf			; recall carry flag
 	ret			;
-	
+
 ;****************************************************************************
 ;
 ; CRLF
@@ -248,10 +248,10 @@ msg2len	equ $ - msg2
 term dd maxTerms		;
 ;****************************************************************************
 ; unallocated data
-; 
-; A better way to do this would be to actually ask for a memory 
+;
+; A better way to do this would be to actually ask for a memory
 ; allocation and use that memory space, but this is a DOS COM file
-; and so we are given the entire 64K of space.   Technically, this 
+; and so we are given the entire 64K of space.   Technically, this
 ; could fail since we *might* be running on a machine which doesn't
 ; have 64K free.  If you're running on such a memory poor machine,
 ; my advice would be to not run this program.

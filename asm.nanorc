@@ -4,7 +4,7 @@ magic "[Aa]ssembl(y|er)"
 
 MACRO: "\<[A-Z_]{2,}\>"
 SECTION: "\<(data|subsection|text)\>"
-KEYWORD "\<(align|file|globl|global|hidden|section|size|type|weak)\>"
+KEYWORD: "\<(align|file|globl|global|hidden|section|size|type|weak)\>"
 KEYWORD: "^[[:space:]]*#[[:space:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
 JUMP: "\<(jmp|je|jne|jns|js|jz|jnz)\>"
 FUNCTION: "\<(call|xor|mov|lea|cmp|push|ror|rol|or|pop|xchg|inc|dec|add|sub|mul|div|imul|idiv)\>"
