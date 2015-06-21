@@ -1,15 +1,15 @@
-LANGS  = awk c cmake coffeescript colortest csharp css cython default dot \
-         email git glsl go html ini inputrc java javascript json keymap \
-         kickstart ledger lisp lua makefile man markdown mpdconf nanorc \
-         nginx patch peg perl php pkgbuild pkg-config po privoxy properties \
-         python rpmspec ruby sed shell sql systemd tex vala vi xml \
-         xresources yaml yum
+LANGS  = apacheconf asm awk c cmake coffeescript colortest csharp css cython \
+         default diff dot email git glsl go html ini inputrc java javascript \
+         json keymap kickstart ledger lisp lua makefile man markdown mpdconf \
+         nanorc nginx patch peg perl php pkg-config pkgbuild po privoxy \
+         properties python rpmspec ruby sed shell sql systemd tex vala vi \
+         xml xresources yaml yum
 
 MIXINS = $(wildcard mixins/*.nanorc)
 FILES  = $(addsuffix .nanorc, $(LANGS))
 ALL    = $(addprefix build/, $(FILES)) build/ALL.nanorc
 DIR    = $(HOME)/.nano/syntax
-THEME  = theme.sed
+THEME  = custom-theme.sed
 FILTER = sed -f mixins.sed | sed -f $(THEME)
 
 all: $(ALL)
@@ -48,7 +48,7 @@ ifeq ($(shell printf "2.1.5\n$(NANOVER)" | sort -nr | head -1),2.1.5)
 endif
 
 ifdef TEXT
-  FILTER += | sed -e 's|^color \(bright\)\{0,1\}black|color \1$(TEXT)|'
+  FILTER += | sed -e 's|^color \(bright\)\{0,1\}white|color \1$(TEXT)|'
 endif
 
 ifdef BSDREGEX

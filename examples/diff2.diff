@@ -1,0 +1,96 @@
+diff --git a/examples/perl.pl b/examples/perl.pl
+index cb72cb5..52a64c3 100644
+--- a/examples/perl.pl
++++ b/examples/perl.pl
+@@ -9,12 +9,6 @@ use lib "$FindBin::Bin/../lib";
+ 
+ perl.pl - example of some perl for nanorc formatting
+ 
+-=head1 SYNOPSIS
+-
+-	example code
+-
+-Explanation
+-
+ =cut
+ 
+ use v5.20.0; # vstrings! also we can now use...
+@@ -22,17 +16,15 @@ use v5.20.0; # vstrings! also we can now use...
+ our $postfix = [q~deref~];
+ print $postfix->$@;
+ print $postfix->$#*;
+-print @{ $circumfix };
+-print @$prefix;
+-print @$$$prefix;
+-print $#{ $circumfix };
+-print $#$prefix;
+-print %{ $circumfix->{'nested'} };
++print @{ $postfix };
++print @$postfix;
++print $#{ $postfix };
++print $#$postfix;
+ 
+ # var $names should not be 'highlighted' in @comments 
+ # but it's not crucial.
+ 
+-warn qq`but they are in $a qq string &unless \$escaped`
++warn qq`but they are in $a qq string`
+   . "nor can #comments begin in strings";
+ 
+ die q!No $^W! unless $^W;
+@@ -83,9 +75,3 @@ say <<HEREDOC;
+ it's a 
+ HEREDOC
+ 
+-0 and 'finally';
+-
+-__DATA__
+-
+-Anything after this is plain text!
+-It can be read with <DATA>
+diff --git a/perl.nanorc b/perl.nanorc
+index 23a7ad6..13b497f 100644
+--- a/perl.nanorc
++++ b/perl.nanorc
+@@ -13,18 +13,18 @@ OPERATOR: "\<(and|or|xor|not)\>"
+ SECTION:  "^[[:space:]]*package ([A-Za-z0-9_]|::)+[[:space:]]*;"
+ SECTION:  "sub [A-Za-z_][A-Za-z0-9_]*"
+ # labels
+-SECTION:  "^[[:space:]]*[A-Za-z_][A-Za-z0-9_]*:[^:]"
++SECTION:  "^[[:space:]]*[A-Za-z_][A-Za-z0-9_]*:[^:]" 
+ 
+-# These are found in `perldoc -f "\-X"`
++# These are found in `perldoc -f "\-X"` 
+ KEYWORD:  "-\<[rwxoRWXOezsfdlpSbctugkTBMAC]\>"
+ 
+ TYPE:     "\<(my|our|local|use lib|use|require|sub|undef|state|no)\>"
+ 
+ # These keyword lists are taken from the nanosyntax project with some minor changes. There seem to be things missing, though.
+-KEYWORD:  "\<(accept|alarm|atan2|bin(d|mode)|c(aller|h(dir|mod|op|own|root)|lose(dir)?|onnect|os|rypt)|d(bm(close|open)|efined|elete|ie|o|ump)|e(ach|of|val|x(ec|ists|it|p))|f(cntl|ileno|lock|ork))\>"
+-KEYWORD:  "\<(get(c|login|peername|pgrp|ppid|priority|pwnam|(host|net|proto|serv)byname|pwuid|grgid|(host|net)byaddr|protobynumber|servbyport)|([gs]et|end)(pw|gr|host|net|proto|serv)ent|getsock(name|opt)|gmtime|goto|grep|hex|index|int|ioctl|join)\>"
+-KEYWORD:  "\<(keys|kill|last|length|link|listen|localtime|log|lstat|m|mkdir|msg(ctl|get|snd|rcv)|next|oct|open(dir)?|ord|pack|pipe|pop|printf?|push|rand|re(ad(dir|link)?|cv|do|name|quire|set|turn|verse|winddir)|rindex|rmdir|scalar|seek(dir)?)\>"
+-KEYWORD:  "\<(se(lect|mctl|mget|mop|nd|tpgrp|tpriority|tsockopt)|shift|shm(ctl|get|read|write)|shutdown|sin|sleep|socket(pair)?|sort|spli(ce|t)|sprintf|sqrt|srand|stat|study|substr|symlink|sys(call|read|tem|write)|tell(dir)?|time|try|truncate|umask)\>"
++KEYWORD:  "\<(accept|alarm|atan2|bin(d|mode)|c(aller|h(dir|mod|op|own|root)|lose(dir)?|onnect|os|rypt)|d(bm(close|open)|efined|elete|ie|o|ump)|e(ach|of|val|x(ec|ists|it|p))|f(cntl|ileno|lock|ork))\>" 
++KEYWORD:  "\<(get(c|login|peername|pgrp|ppid|priority|pwnam|(host|net|proto|serv)byname|pwuid|grgid|(host|net)byaddr|protobynumber|servbyport)|([gs]et|end)(pw|gr|host|net|proto|serv)ent|getsock(name|opt)|gmtime|goto|grep|hex|index|int|ioctl|join)\>" 
++KEYWORD:  "\<(keys|kill|last|length|link|listen|localtime|log|lstat|m|mkdir|msg(ctl|get|snd|rcv)|next|oct|open(dir)?|ord|pack|pipe|pop|printf?|push|rand|re(ad(dir|link)?|cv|do|name|quire|set|turn|verse|winddir)|rindex|rmdir|scalar|seek(dir)?)\>" 
++KEYWORD:  "\<(se(lect|mctl|mget|mop|nd|tpgrp|tpriority|tsockopt)|shift|shm(ctl|get|read|write)|shutdown|sin|sleep|socket(pair)?|sort|spli(ce|t)|sprintf|sqrt|srand|stat|study|substr|symlink|sys(call|read|tem|write)|tell(dir)?|time|try|truncate|umask)\>" 
+ KEYWORD:  "\<(un(def|link|pack|shift)|utime|values|vec|wait(pid)?|wantarray|warn|write)\>"
+ 
+ # some items missing from the above list
+@@ -66,14 +66,14 @@ STRING:   "`([^`]|\\`)*`"
+ 
+ # Variables and functions will be interpolated into the strings above
+ 
+-VARIABLE: "(\$#\$*|[$@%*]\$*)[A-Za-z_]([A-Za-z0-9_]|::)*"
++VARIABLE: "(\$#\$*|[$@%*]+)[A-Za-z_]([A-Za-z0-9_]|::)*"
+ VARIABLE: "\$[0-9]"
+ VARIABLE: "\$[@`'!$%&*~?|:;\\\/=]"
+ VARIABLE: "\$^[A-Z]"
+ VARIABLE: "(\$#|[$@%])[+\-]"
+ 
+ # variable name and dereferencing
+-VARIABLE: "(\$#\$*|[$@%*]\$*)\{([^\}]|\{[^\}]*\})+\}"
++VARIABLE: "(\$#\$*|[$@%*]+)\{[^\}]+\}"
+ 
+ # use the same formatting for postfix dereference
+ VARIABLE: "([$@%]|\$#)\*"

@@ -9,7 +9,14 @@ syntax "gitconfig" "git(config|modules)$|\.git/config$"
 syntax "git-editmsg" "(COMMIT|TAG)_EDITMSG$"
 
 COMMENT:   "^#.*$"
-color ,red "[[:space:]]+$"
+SECTION:   start="# Changes.*" end="# Changed.*"
+SECTION:   start="# Untracked.*" end="diff"
+SECTION:   start="# Untracked.*" end="$$"
+TAG:       "^[+-].*"
+KEYWORD:   "^(diff|index|---|\+\+\+).*"
+KEYWORD:   "(Change[ds]|Untracked)"
+SECTION:   "@@.*@@"
++LINT
 
 syntax "git-rebase" "git-rebase-todo$"
 

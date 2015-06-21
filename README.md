@@ -1,26 +1,15 @@
-Unmaintained
+nanorc syntax highlighting project
 ============
-
-I am no longer using nano as my editor and hence have little motivation
-to continue working on this project. It remains available on GitHub for
-archival purposes only.
-
-Everything in the repository is in the Public Domain. Feel free to fork
-it and/or use the files for any purpose.
-
-P.S. I highly recommend [dex](https://github.com/tihirvon/dex) as a
-simple but much more capable editor.
-
-
-------
-
 
 Description
 -----------
 
 The syntax highlighting definitions that come bundled with nano are of
 pretty poor quality. This is an attempt at providing a good set of accurate
-syntax definitions to replace and expand the defaults.
+syntax definitions to replace and expand the defaults, as well as provide
+standards for syntax highlighting across file types. This project will
+eventually attempt to merge work done by ileathan on nano-highlight which
+itself collects work done by nanosyntax (new bsd license) and others.
 
 Installation
 ------------
@@ -45,10 +34,12 @@ If you prefer to install to a location that all users can access, using
 Syntax files installed under this directory can then be `include`d in
 either `/etc/nanorc` or any user's personal `~/.nanorc`.
 
-**Note**: If your terminal **text** color isn't black, you'll need to
+**Note**: If your terminal **text** color isn't white, you'll need to
 specify it when installing, using `make install TEXT=color`, where
 `color` must be one of: `red`, `green`, `yellow`, `blue`, `magenta`,
-`cyan` or `white`.
+`cyan` or `black`. These nanorc files are designed for editing files on
+a console, which is usually black with white text. If you have a gui, 
+you probably shouldn't be using nano.
 
 After installation, the various source code samples in the `examples`
 directory can be used to check that highlighting is working correctly.
@@ -138,7 +129,6 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
-
 
 [GNU nano]: http://www.nano-editor.org/
 [nanorc]: http://www.nano-editor.org/dist/v2.3/nanorc.5.html
