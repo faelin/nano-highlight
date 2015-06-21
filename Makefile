@@ -47,6 +47,17 @@ ifeq ($(shell printf "2.1.5\n$(NANOVER)" | sort -nr | head -1),2.1.5)
   FILTER += | sed -e '/^header/d'
 endif
 
+#Remove "magic" command if not supported (introduced in 2.3)
+
+#Extract just the minor version.
+NANOMINORVER = $(shell nano -V | sed -n 's/^.* version \([0-9\.]*\)\..*/\1/p')
+
+SUPPORTMAGIC = $(shell expr $(NANOMINORVER) \>= 2.3)
+
+ifeq ($(SUPPORTMAGIC),0)
+  FILTER += | sed -e '/^magic/d'
+endif
+
 ifdef TEXT
   FILTER += | sed -e 's|^color \(bright\)\{0,1\}white|color \1$(TEXT)|'
 endif
