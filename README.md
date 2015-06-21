@@ -1,5 +1,5 @@
 nanorc syntax highlighting project
-============
+==================================
 
 Description
 -----------
@@ -112,10 +112,9 @@ worldwide. This software is distributed without any warranty.
 You should have received a copy of the CC0 Public Domain Dedication along
 with this software. If not, you can download it from [their website][CC0].
 
-[GNU nano]: http://www.nano-editor.org/
 [nanorc]: http://www.nano-editor.org/dist/v2.3/nanorc.5.html
-[theme.sed]: https://github.com/nanorc/nanorc/tree/master/theme.sed
-[mixins.sed]: https://github.com/nanorc/nanorc/tree/master/mixins.sed
-[mixins]: https://github.com/nanorc/nanorc/tree/master/mixins
+[theme.sed]: https://github.com/tech4david/nano-highlight/tree/master/theme.sed
+[mixins.sed]: https://github.com/tech4david/nano-highlight/tree/master/mixins.sed
+[mixins]: https://github.com/tech4david/nano-highlight/tree/master/mixins
 [ERE]: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/
