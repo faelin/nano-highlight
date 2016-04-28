@@ -30,7 +30,5 @@
     r mixins/lint.nanorc
     d
 }
-/^+LONGLINE/ {
-    r mixins/longline.nanorc
-    d
-}
+s/^+LONGLINE[[:space:]]*$/WARNING: "^.{80}.+$"/
+s/^+LONGLINE\([0-9]\+\)[[:space:]]*$/WARNING: "^.{\1}.+$"/
