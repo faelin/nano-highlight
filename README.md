@@ -7,9 +7,10 @@ Description
 The syntax highlighting definitions that come bundled with nano are of
 pretty poor quality. This is an attempt at providing a good set of accurate
 syntax definitions to replace and expand the defaults, as well as provide
-standards for syntax highlighting across file types. This project will
-eventually attempt to merge work done by ileathan on nano-highlight which
-itself collects work done by nanosyntax (new bsd license) and others.
+standards for syntax highlighting across file types. This project
+is originally based on tech4david's nano-highlight, which is in turn based
+on the original [nanorc project](https://github.com/nanorc/nanorc) (which
+is not maintained anymore).
 
 Installation
 ------------
@@ -38,7 +39,7 @@ either `/etc/nanorc` or any user's personal `~/.nanorc`.
 specify it when installing, using `make install TEXT=color`, where
 `color` must be one of: `red`, `green`, `yellow`, `blue`, `magenta`,
 `cyan` or `black`. These nanorc files are designed for editing files on
-a console, which is usually black with white text. If you have a gui, 
+a console, which is usually black with white text. If you have a GUI, 
 you probably shouldn't be using nano.
 
 After installation, the various source code samples in the `examples`
@@ -48,7 +49,7 @@ If it doesn't work as expected, see the FAQ below.
 Theme System
 ------------
 
-All `*.nanorc` files are passed through [mixins.sed] and [theme.sed] before
+All `*.nanorc` files are passed through [mixins.sed] and [custom-theme.sed] before
 installation. These scripts allow rules to be specified in terms of token
 names or [mixins], instead of hard-coded colors.
 
@@ -58,7 +59,7 @@ For example, the following named rule:
 
 becomes:
 
-    color green "int|bool|string"
+    color brightblue "int|bool|string"
 
 and the following "mixin":
 
@@ -66,16 +67,21 @@ and the following "mixin":
 
 becomes:
 
-    color brightcyan "\<(true|false)\>"
+    color brightwhite "\<(true|false)\>"
 
 This system helps to keep colors uniform across different languages and
 also to keep the definitions clear and maintainable, which is something that
 becomes quite awkward using only plain [nanorc] files.
 
 **Note:** if `~/.nanotheme` exists it will be used as a custom theme, in
-place of [theme.sed]. A custom theme may also be specified by installing
+place of [custom-theme.sed]. A custom theme may also be specified by installing
 with `make THEME=your-custom-theme.sed`. Themes must be valid sed scripts,
-defining *all* color codes found in [theme.sed] in order to work correctly.
+defining *all* color codes found in [custom-theme.sed] or (original) [theme.sed]
+in order to work correctly.
+
+**Note 2:** don't forget that if you execute `make` via `sudo` (e.g. to install
+global syntax highlighting rules as outlined above), then `~/.nanotheme` will
+refer to a file in root's home directory, not your own.
 
 FAQ
 ----
@@ -113,8 +119,9 @@ You should have received a copy of the CC0 Public Domain Dedication along
 with this software. If not, you can download it from [their website][CC0].
 
 [nanorc]: http://www.nano-editor.org/dist/v2.3/nanorc.5.html
-[theme.sed]: https://github.com/tech4david/nano-highlight/tree/master/theme.sed
-[mixins.sed]: https://github.com/tech4david/nano-highlight/tree/master/mixins.sed
-[mixins]: https://github.com/tech4david/nano-highlight/tree/master/mixins
+[custom-theme.sed]: https://github.com/YSakhno/nanorc/tree/master/custom-theme.sed
+[theme.sed]: https://github.com/YSakhno/nanorc/tree/master/theme.sed
+[mixins.sed]: https://github.com/YSakhno/nanorc/tree/master/mixins.sed
+[mixins]: https://github.com/YSakhno/nanorc/tree/master/mixins
 [ERE]: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/
