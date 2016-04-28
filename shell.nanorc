@@ -17,13 +17,16 @@ PLAIN:    "(^|[[:space:]])--?(test|then|time|times|trap|type|ulimit|umask|unalia
 # Unkeywordify occurrences in paths
 PLAIN:    "/local\>"
 PLAIN:    "(^|[[:space:]])local/"
++WHITESPACE
 
 
 
 OPERATOR: "[{}()<>!=&|;`$]|\\|\[|\]|-(eq|ne|gt|lt|ge|le|s|n|z)\>"
 
 +STRING
-VARIABLE: "\$\{?[A-Za-z0-9_!@#$*?-]+\}?|`[^`]*`"
+VARIABLE: "\$[A-Za-z0-9_!@#$*?-]+"
+VARIABLE: "\$\{(\\.|[^}])+\}"
+VARIABLE: "`[^`]*`"
 ESCAPE:   "\\.?"
 +HASHCOMMENT
 +TODO

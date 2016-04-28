@@ -115,7 +115,8 @@ KEYWORD:  "(^|[[:space:]{;])deny[[:space:]]+all[[:space:]]*([;#]|$)"
 KEYWORD:  "(^|[[:space:]{;])gzip_proxied([[:space:]]+(off|expired|no-cache|no-store|private|no_last_modified|no_etag|auth|any))+[[:space:]]*([;#]|$)"
 KEYWORD:  "(^|[[:space:]{;])(worker_cpu_affinity|worker_processes)[[:space:]]+auto[[:space:]]*([;#]|$)"
 
-PLAIN:    "[[:space:]{};]+"
++WHITESPACE
+PLAIN:    "[{};]+"
 REGEXP:   "~[[:space:]]+(\\.|[^ ])+"
 ESCAPE:   "\\."
 BOOLEAN:  "\<(on|off)\>"
