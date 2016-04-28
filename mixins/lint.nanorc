@@ -1,3 +1,2 @@
 WHITESPACE: "[[:space:]]+$"
 WARNING:    "	+ +| +	+"
-# +EXTRALINT
