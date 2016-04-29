@@ -1,0 +1,35 @@
+syntax "logrotate" "/etc/logrotate\.(conf|d/[^/]+)$"
+header "^[[:space:]]*(/var/log/[^[:space:]]+\.log|"/var/log/(\\"|[^"])+\.log"|'/var/log/(\\'|[^'])+\.log')"
+
+KEYWORD:  "^[[:space:]]*(hourly|daily|weekly|monthly|yearly)[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(no)?(copy(truncate)?|create|(delay)?compress)[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(no)?(dateext|missingok|sharedscripts|shred)[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(no(mail|olddir)|mail(first|last))[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(dateyesterday|(not)?ifempty)[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*((un)?compresscmd|compress(ext|options))[[:space:]]"
+KEYWORD:  "^[[:space:]]*(maxage|rotate|shredcycles|start)[[:space:]]+[0-9]+[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(create|su)[[:space:]]"
+NUMBER:   "^[[:space:]]*(max|min)?size[[:space:]]+[0-9]+[kKmMgG]?[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(max|min)?size[[:space:]]"
+NUMBER:   "[[:space:]][0-9]+([[:space:]]+[0-9]+)*([[:space:]]|$)"
+
++WHITESPACES
+PATH:     start="^[[:space:]]*['"]?/var/log/" end="\{[[:space:]]*$"
+PLAIN:    "[[:space:]]*\{[[:space:]]*$"
+OPERATOR: "(\{|^[[:space:]]*\})[[:space:]]*$"
+
+STRING:   "^[[:space:]]*(dateformat|extension)[[:space:]]+([^'"][^[:space:]]*|"(\\"|[^"])*"|'(\\'|[^'])*')[[:space:]]*$"
+PATH:     "^[[:space:]]*(include|olddir)[[:space:]]+([^'"][^[:space:]]*|"(\\"|[^"])*"|'(\\'|[^'])*')[[:space:]]*$"
+EMAIL:    "^[[:space:]]*mail[[:space:]]+([^'"<][^[:space:]]*|"(\\"|[^"])*"|'(\\'|[^'])*'|<[^>]*>)[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*(dateformat|extension|include|mail|olddir)[[:space:]]"
+STRING:   "^[[:space:]]*tabooext[[:space:]]+\+([[:space:]]+([^'"][^[:space:]]+|"(\\"|[^"])*"|'(\\'|[^'])*'))+[[:space:]]*$"
+STRING:   "^[[:space:]]*tabooext([[:space:]]+([^'"][^[:space:]]*|"(\\"|[^"])*"|'(\\'|[^'])*'))*[[:space:]]*$"
+OPERATOR: "^[[:space:]]*tabooext[[:space:]]+\+[[:space:]]+"
+KEYWORD:  "^[[:space:]]*tabooext([[:space:]]|$)"
+PLAIN:    "^[[:space:]]+"
+MACRO:    start="^[[:space:]]*((post|pre)rotate|(first|last)action|preremove)[[:space:]]*$" end="^[[:space:]]*endscript[[:space:]]*$"
+KEYWORD:  "^[[:space:]]*((post|pre)rotate|(first|last)action|preremove|endscript)[[:space:]]*$"
+
+ESCAPE:   "\\.?"
+COMMENT:  "^[[:space:]]*#.*$"
++LINT
