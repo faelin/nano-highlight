@@ -8,9 +8,10 @@ The syntax highlighting definitions that come bundled with nano are of
 pretty poor quality. This is an attempt at providing a good set of accurate
 syntax definitions to replace and expand the defaults, as well as provide
 standards for syntax highlighting across file types. This project
-is originally based on tech4david's nano-highlight, which is in turn based
-on the original [nanorc project](https://github.com/nanorc/nanorc) (which
-is not maintained anymore).
+is originally based
+on [tech4david's nano-highlight](https://github.com/tech4david/nano-highlight),
+which is in turn based on the original
+[nanorc project](https://github.com/nanorc/nanorc) (which is not maintained anymore).
 
 Installation
 ------------
