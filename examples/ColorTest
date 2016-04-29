@@ -23,6 +23,9 @@ WARNING
 SECTION
 TAG
 ATTRIBUTE
+PATH
+URL
+EMAIL
 WHITESPACE
 
 These words should appear in their respective color:

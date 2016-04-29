@@ -16,6 +16,9 @@ s|^DELIMITER:|color brightred|
 s|^JUMP:|color brightcyan|
 s|^WARNING:|color brightwhite,red|
 s|^SECTION:|color white|
-s|^TAG:|color brightblue|
+s|^TAG:|color brightmagenta|
 s|^ATTRIBUTE:|color blue|
+s|^PATH:|color brightgreen|
+s|^URL:|color brightgreen|
+s|^EMAIL:|color brightgreen|
 s|^WHITESPACE:|color ,green|
