@@ -1,34 +1,41 @@
 The following two lines (which read, in capital letters, "default" and "plain"
 respectively) should be the same color.  If they're not, or if you see
 something else than "default" and "plain", please read the "Installation"
-section of the README.
+section of the README.  Other lines should contain two words separated
+by a hypen.
 
-DEFAULT
-PLAIN
-FUNCTION
-STRING
-COMMENT
-TYPE
-BOOLEAN
-NUMBER
-VARIABLE
-OPERATOR
-KEYWORD
-MACRO
-REGEXP
-ESCAPE
-DELIMITER
-JUMP
-WARNING
-SECTION
-TAG
-ATTRIBUTE
-PATH
-URL
-EMAIL
-WHITESPACE
+For all other rows, the first column (the one written in all upper case)
+should be colored, the second (after a dash) should not be colored. The
+third and fourth columns should share the same coloring, as they represent
+case-insensitive highlighting keywords.
 
-These words should appear in their respective color:
+DEFAULT    - Default        iPlAiN      - iPlain
+PLAIN      - Plain          iFuNcTiOn   - iFunction
+
+FUNCTION   - Function       iStRiNg     - iString
+STRING     - String         iCoMmEnT    - iComment
+COMMENT    - Comment        iTyPe       - iType
+TYPE       - Type           iBoOlEaN    - iBoolean
+BOOLEAN    - Boolean        iNuMbEr     - iNumber
+NUMBER     - Number         iVaRiAbLe   - iVariable
+VARIABLE   - Variable       iOpErAtOr   - iOperator
+OPERATOR   - Operator       iKeYwOrD    - iKeyword
+KEYWORD    - Keyword        iMaCrO      - iMacro
+MACRO      - Macro          iReGeXp     - iRegExp
+REGEXP     - RegExp         iEsCaPe     - iEscape
+ESCAPE     - Escape         iDeLiMiTeR  - iDelimiter
+DELIMITER  - Delimiter      iJuMp       - iJump
+JUMP       - Jump           iWaRnInG    - iWarng
+WARNING    - Warng          iSeCtIoN    - iSection
+SECTION    - Section        iTaG        - iTag
+TAG        - Tag            iAtTrIbUtE  - iAttribute
+ATTRIBUTE  - Attribute      iEnTiTy     - iEntity
+PATH       - Path           iPaTh       - iPath
+URL        - url            iUrL        - iurl
+EMAIL      - EMail          iEmAiL      - iEMail
+WHITESPACE - WhiteSpace     iWhItEsPaCe - iWhiteSpace
+
+The following words should appear in their respective color:
 black red green yellow blue magenta cyan white
 brightblack brightred brightgreen brightyellow brightblue brightmagenta brightcyan brightwhite
 
