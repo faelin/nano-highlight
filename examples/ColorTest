@@ -9,27 +9,27 @@ should be colored, the second (after a dash) should not be colored. The
 third and fourth columns should share the same coloring, as they represent
 case-insensitive highlighting keywords.
 
-DEFAULT    - Default        iPlAiN      - iPlain
-PLAIN      - Plain          iFuNcTiOn   - iFunction
-
-FUNCTION   - Function       iStRiNg     - iString
-STRING     - String         iCoMmEnT    - iComment
-COMMENT    - Comment        iTyPe       - iType
-TYPE       - Type           iBoOlEaN    - iBoolean
-BOOLEAN    - Boolean        iNuMbEr     - iNumber
-NUMBER     - Number         iVaRiAbLe   - iVariable
-VARIABLE   - Variable       iOpErAtOr   - iOperator
-OPERATOR   - Operator       iKeYwOrD    - iKeyword
-KEYWORD    - Keyword        iMaCrO      - iMacro
-MACRO      - Macro          iReGeXp     - iRegExp
-REGEXP     - RegExp         iEsCaPe     - iEscape
-ESCAPE     - Escape         iDeLiMiTeR  - iDelimiter
-DELIMITER  - Delimiter      iJuMp       - iJump
-JUMP       - Jump           iWaRnInG    - iWarng
-WARNING    - Warng          iSeCtIoN    - iSection
-SECTION    - Section        iTaG        - iTag
-TAG        - Tag            iAtTrIbUtE  - iAttribute
-ATTRIBUTE  - Attribute      iEnTiTy     - iEntity
+DEFAULT    - Default        iDeFaUlT    - iDefault
+PLAIN      - Plain          iPlAiN      - iPlain
+FUNCTION   - Function       iFuNcTiOn   - iFunction
+STRING     - String         iStRiNg     - iString
+COMMENT    - Comment        iCoMmEnT    - iComment
+TYPE       - Type           iTyPe       - iType
+BOOLEAN    - Boolean        iBoOlEaN    - iBoolean
+NUMBER     - Number         iNuMbEr     - iNumber
+VARIABLE   - Variable       iVaRiAbLe   - iVariable
+OPERATOR   - Operator       iOpErAtOr   - iOperator
+KEYWORD    - Keyword        iKeYwOrD    - iKeyword
+MACRO      - Macro          iMaCrO      - iMacro
+REGEXP     - RegExp         iReGeXp     - iRegExp
+ESCAPE     - Escape         iEsCaPe     - iEscape
+DELIMITER  - Delimiter      iDeLiMiTeR  - iDelimiter
+JUMP       - Jump           iJuMp       - iJump
+WARNING    - Warng          iWaRnInG    - iWarng
+SECTION    - Section        iSeCtIoN    - iSection
+TAG        - Tag            iTaG        - iTag
+ATTRIBUTE  - Attribute      iAtTrIbUtE  - iAttribute
+ENTITY 	   - Entity 	    iEnTiTy     - iEntity
 PATH       - Path           iPaTh       - iPath
 URL        - url            iUrL        - iurl
 EMAIL      - EMail          iEmAiL      - iEMail
