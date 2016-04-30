@@ -4,19 +4,27 @@
     <meta charset="utf-8">
     <title>nano Syntax Highlighting Example</title>
 </head>
-<body>
+<body onload="javascript:alert(&quot;hello!&quot;)">
     <!-- Comment -->
     <h1 id="firstheading">Heading</h1>
-    <ol class="list">
-        <li><a href="#">List Item</a></li>
-        <li hidden>
+    <ol class='list'>
+        <li><A Href="#"title="This attribute is crumpled">List Item</A></li>
+        <Li HIDDEN>
             <a href="https://github.com/craigbarnes/nanorc">nanorc</a>
-        </li>
+        </lI>
     </ol>
-    <invalid>Warning for non-standard elements</invalid>
+    <p>This line of text contains &wrong; character entity reference.
+    <P><IMG src = qq  AlT  =  [\]^@-!()*{|}%;:~?/></IMG>
+    <invalid title="Here&apos;s an apostrophe">Warning for non-standard elements</invalid>
+    <pre>
+This text is&Tab;pre-formatted&NewLine;example
+    </pre>
 
     {% block django_template %}{{ value }}{% endblock %}
 
     <?php print("Hello World"); ?>
+    <center>Elements and attributes <font color=red>deprecated</font>
+        in HTML5 have their own highlighting rules.<br>
+        Copyright &#xA9; 2016 something or other.</center>
 </body>
 </html>
