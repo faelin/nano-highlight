@@ -29,7 +29,7 @@ WARNING    - Warng          iWaRnInG    - iWarng
 SECTION    - Section        iSeCtIoN    - iSection
 TAG        - Tag            iTaG        - iTag
 ATTRIBUTE  - Attribute      iAtTrIbUtE  - iAttribute
-ENTITY 	   - Entity 	    iEnTiTy     - iEntity
+CHARREF    - Charref        iChArReF    - iCharref
 PATH       - Path           iPaTh       - iPath
 URL        - url            iUrL        - iurl
 EMAIL      - EMail          iEmAiL      - iEMail

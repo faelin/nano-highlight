@@ -18,7 +18,7 @@ s|^\(i\?\)WARNING:|\1color brightwhite,red|
 s|^\(i\?\)SECTION:|\1color brightmagenta|
 s|^\(i\?\)TAG:|\1color brightmagenta|
 s|^\(i\?\)ATTRIBUTE:|\1color magenta|
-s|^\(i\?\)ENTITY:|\1color magenta|
+s|^\(i\?\)CHARREF:|\1color magenta|
 s|^\(i\?\)PATH:|\1color brightblue|
 s|^\(i\?\)URL:|\1color brightblue|
 s|^\(i\?\)EMAIL:|\1color brightblue|
