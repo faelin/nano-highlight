@@ -46,7 +46,7 @@ ATTRIBUTE:  "[[:space:]]*\<[Dd][Aa][Tt][Aa]-[a-z0-9_.]+(-[a-z0-9_.]+)*[[:space:]
 #
 
 # Obsolete elements
-WARNING:    "</?(bgsound|blink|command|eventsource|listing|nobr|plaintext|spacer|xmp)([[:space:]]+>?|>|[[:space:]]*$)"
+~WARNING:   "</?(bgsound|blink|command|eventsource|listing|nobr|plaintext|spacer|xmp)([[:space:]]+>?|>|[[:space:]]*$)"
 # Normal elements valid in HTML5
 ~TAG:       "</?(a|abbr|address|article|aside|audio|b|bd[io]|blockquote|body|button)([[:space:]]+>?|>|[[:space:]]*$)"
 ~TAG:       "</?(canvas|caption|cite|code|colgroup|datalist|d[dlt]|del|details|dfn)([[:space:]]+>?|>|[[:space:]]*$)"
