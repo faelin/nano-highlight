@@ -13,6 +13,29 @@ on [tech4david's nano-highlight](https://github.com/tech4david/nano-highlight),
 which is in turn based on the original
 [nanorc project](https://github.com/nanorc/nanorc) (which is not maintained anymore).
 
+Actually, syntax highlighting definitions from the original nanorc repo were
+not of the finest quality either, even when they were actively maintained
+(at least the ones changed/improved by me; although they are of course still
+better than the ones that come bundled with nano). Here is a brief list
+of what supported formats changed in this repository compared to the source one.
+
+### New format
+
+  * LogRotate configuration files
+
+### Greatly improved formats
+
+  * CSS
+  * HTML
+  * Nano configuration / syntax highlighting rules
+  * Nginx configuration files
+  * ColorTest (bogus format for testing color themes)
+
+### Minor improvements
+
+  * JavaScript scripts
+  * Shell scripts
+
 Installation
 ------------
 
@@ -40,7 +63,7 @@ either `/etc/nanorc` or any user's personal `~/.nanorc`.
 specify it when installing, using `make install TEXT=color`, where
 `color` must be one of: `red`, `green`, `yellow`, `blue`, `magenta`,
 `cyan` or `black`. These nanorc files are designed for editing files on
-a console, which is usually black with white text. If you have a GUI, 
+a console, which is usually black with white text. If you have a GUI,
 you probably shouldn't be using nano.
 
 After installation, the various source code samples in the `examples`
