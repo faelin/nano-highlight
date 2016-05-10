@@ -58,16 +58,18 @@ specify it when installing, using `make install TEXT=color`, where
 a console, which is usually black with white text. If you have a GUI,
 you probably shouldn't be using nano.
 
-After installation, the various source code samples in the `examples`
+After installation, the various source code samples in the [examples]/
 directory can be used to check that highlighting is working correctly.
 If it doesn't work as expected, see the FAQ below.
 
 Theme System
 ------------
 
-All `*.nanorc` files are passed through [mixins.sed] and [custom-theme.sed] before
-installation. These scripts allow rules to be specified in terms of token
-names or [mixins], instead of hard-coded colors.
+All `*.nanorc` files are passed through [mixins.sed] found in the [scripts]/
+directory, and additionally through a theme-definition system
+([default.nanorctheme] by default) before installation. This system allows
+rules to be specified in terms of token type names or [mixins], instead
+of hard-coded colors.
 
 For example, the following named rule:
 
@@ -89,14 +91,21 @@ This system helps to keep colors uniform across different languages and
 also to keep the definitions clear and maintainable, which is something that
 becomes quite awkward using only plain [nanorc] files.
 
-**Note:** if `~/.nanotheme` exists it will be used as a custom theme, in
-place of [custom-theme.sed]. A custom theme may also be specified by installing
-with `make THEME=your-custom-theme.sed`. Themes must be valid sed scripts,
-defining *all* color codes found in [custom-theme.sed] or (original) [theme.sed]
-in order to work correctly.
+**Note:** if `~/.nanorctheme` exists, it will be used as a custom theme, in
+place of [default.nanorctheme]. A custom theme may also be specified by copying
+the theme-definition file in [themes]/ directory first, and then installing
+with `make THEME=your-custom-theme` (note that you do not need to specify
+the path to a file, neither do you need to specify file's extension). To find
+out how themes are defined, have a look at the default theme (file
+[default.nanorctheme]). You must define *all* token types found in that file
+in order for syntax highlighting to work correctly with your custom theme. Bear
+in mind that the format of the theme-definition file has changed compared
+to the format used in source repositories (it used to be a sed script, while
+now such script is automatically generated from the chosen theme-definition
+file during the build process).
 
 **Note 2:** don't forget that if you execute `make` via `sudo` (e.g. to install
-global syntax highlighting rules as outlined above), then `~/.nanotheme` will
+global syntax highlighting rules as outlined above), then `~/.nanorctheme` will
 refer to a file in root's home directory, not your own.
 
 FAQ
@@ -135,9 +144,11 @@ You should have received a copy of the CC0 Public Domain Dedication along
 with this software. If not, you can download it from [their website][CC0].
 
 [nanorc]: http://www.nano-editor.org/dist/v2.3/nanorc.5.html
-[custom-theme.sed]: https://github.com/YSakhno/nanorc/tree/master/custom-theme.sed
-[theme.sed]: https://github.com/YSakhno/nanorc/tree/master/theme.sed
-[mixins.sed]: https://github.com/YSakhno/nanorc/tree/master/mixins.sed
+[default.nanorctheme]: https://github.com/YSakhno/nanorc/tree/master/themes/default.nanorctheme
+[mixins.sed]: https://github.com/YSakhno/nanorc/tree/master/scripts/mixins.sed
+[examples]: https://github.com/YSakhno/nanorc/tree/master/examples
 [mixins]: https://github.com/YSakhno/nanorc/tree/master/mixins
+[scripts]: https://github.com/YSakhno/nanorc/tree/master/scripts
+[themes]: https://github.com/YSakhno/nanorc/tree/master/themes
 [ERE]: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/

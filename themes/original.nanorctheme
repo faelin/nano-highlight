@@ -1,0 +1,42 @@
+#
+# This file defines the original syntax highlighting
+# theme (i.e. the one that was bundled with the original
+# nanorc project https://github.com/nanorc/nanorc) with the only exception that
+# default text color was changed from black to white.  If you prefer some other
+# default text color (say, if your background color is NOT black), you may
+# specify the text color using TEXT variable to make.
+# Since the original project did not define some token types used in the current
+# project, some assumptions were made as to which colors would be used with
+# these new token types.
+#
+# If you wish to use this theme during the build process, specify it using
+# the THEME variable to make, like so: make install THEME=original
+#
+# For the description of the format of this file, see comments
+# in the default.nanorctheme file.
+#
+
+PLAIN      white
+FUNCTION   brightblue
+STRING     yellow
+COMMENT    cyan
+TYPE       green
+BOOLEAN    brightcyan
+NUMBER     blue
+VARIABLE   brightyellow
+OPERATOR   red
+KEYWORD    brightwhite
+MACRO      brightyellow
+REGEXP     magenta
+ESCAPE     magenta
+DELIMITER  brightgreen
+JUMP       brightred
+WARNING    brightwhite,red
+SECTION    brightmagenta
+TAG        brightmagenta
+ATTRIBUTE  magenta
+CHARREF    magenta
+PATH       brightyellow
+URL        brightyellow
+EMAIL      brightyellow
+WHITESPACE ,cyan

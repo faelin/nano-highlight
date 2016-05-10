@@ -1,0 +1,53 @@
+#
+# This file describes a default scheme for nanorc syntax highlighting.
+# This theme is used during the build process by default, you do not need
+# to specify it explicitly (although, of course, you can).
+# You may copy this file to your own file, edit that file to your liking,
+# and then use your theme by invoking make with THEME variable set
+# to the name of your own theme like so: make install THEME=custom
+#
+# Everything after a # character is a comment up to the end of the line.
+# Comments are ignored. Empty lines are ignored too.  Leading/trailing white
+# space characters are removed before theme file is processed.
+#
+# Each line of the theme file describes a token type and how this token type
+# should be colored (highlighted).  The first word on each line is the name
+# of the token type. After the name of the token type at least one white space
+# character must follow, and then a text and background color
+# for the highlighting must be specified, separated by a comma.  No spaces
+# are allowed inside color definition (that is, color definition is considered
+# a single word, despite a possible comma).
+#
+# Background color can be omitted (in which case default background color
+# of the terminal will be used).  If you are omitting the background color,
+# a comma may be omitted also.  Likewise, a text color can be ommited,
+# but comma must be present in this case.
+#
+# Author:  Yuri Sakhno
+#          ysakhno at gmail dot com
+#
+
+PLAIN      white
+FUNCTION   brightgreen
+STRING     brightcyan
+COMMENT    cyan
+TYPE       brightblue
+BOOLEAN    brightwhite
+NUMBER     brightred
+VARIABLE   brightyellow
+OPERATOR   yellow
+KEYWORD    brightwhite
+MACRO      brightmagenta
+REGEXP     blue,cyan
+ESCAPE     black,cyan
+DELIMITER  brightred
+JUMP       brightcyan
+WARNING    brightyellow,red
+SECTION    brightgreen
+TAG        brightwhite
+ATTRIBUTE  green
+CHARREF    brightred
+PATH       brightblue
+URL        brightblue
+EMAIL      brightblue
+WHITESPACE ,green
