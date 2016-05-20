@@ -1,0 +1,38 @@
+#
+# This file defines the syntax highlighting theme used by GinjaNinja32
+# (i.e. the one that can be found in https://github.com/GinjaNinja32/nanorc.
+# Since some token types used in the current project are not defined there,
+# some assumptions were made as to which colors would be used with these
+# new token types.
+#
+# If you wish to use this theme during the build process, specify it using
+# the THEME variable to make, like so: make install THEME=GinjaNinja32
+#
+# For the description of the format of this file, see comments
+# in the default.nanorctheme file.
+#
+
+PLAIN      white
+FUNCTION   yellow
+STRING     red
+COMMENT    magenta
+TYPE       green
+BOOLEAN    cyan
+NUMBER     brightred
+VARIABLE   green
+OPERATOR   cyan
+KEYWORD    cyan
+MACRO      green
+REGEXP     magenta
+ESCAPE     magenta
+DELIMITER  brightgreen
+JUMP       brightred
+WARNING    brightwhite,red
+SECTION    brightmagenta
+TAG        brightmagenta
+ATTRIBUTE  magenta
+CHARREF    magenta
+PATH       brightyellow
+URL        brightyellow
+EMAIL      brightyellow
+WHITESPACE ,cyan
