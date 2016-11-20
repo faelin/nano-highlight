@@ -13,6 +13,7 @@ Here is a brief list of what supported formats changed in this repository compar
 
 ### Added language highlighting
 
+  * Asterisk PBX configuration (both .conf and .ael)
   * CronTab
   * DM
   * Erlang

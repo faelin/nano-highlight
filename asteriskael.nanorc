@@ -1,0 +1,25 @@
+syntax "asteriskael" "\.ael$"
+
+NUMBER:    "\<[0-9]+\>"
+SECTION:   "^[[:space:]]*context[[:space:]]+[^[:space:]{;]+"
+SECTION:   start="\<includes[[:space:]]*\{" end="\}"
+MACRO:     "^[[:space:]]*macro[[:space:]]+[^{/]+"
+KEYWORD:   "\<(abstract|break|case|catch|context|continue|else|eswitches)\>"
+KEYWORD:   "\<(for|globals|goto|hint|if|ifTime|includes|jump|local)\>"
+KEYWORD:   "\<(macro|pattern|random|regexten|return|switch|switches|while)\>"
+JUMP:      "^[[:space:]]*[^[:space:]:]+:"
+
+ATTRIBUTE: "^[[:space:]]*ignorepat[[:space:]]*=>[[:space:]]*[^[:space:];]+"
+ATTRIBUTE: "^[[:space:]]*[^_][^[:space:]=]*[[:space:]]*=>"
+REGEXP:    "^[[:space:]]*_[^[:space:]=]+[[:space:]]*=>"
+KEYWORD:   "^[[:space:]]*ignorepat[[:space:]]*=>"
+
+MACRO:     "&[^(]+\([^)]*\)"
+
+OPERATOR:  "[{}]"
++WHITESPACE
+OPERATOR:  "=>|[{=};,]"
+STRING:    ""[^"]*""
+VARIABLE:  "\$\{[^}]+\}"
+COMMENT:   "//.*$"
++LINT

@@ -1,0 +1,42 @@
+syntax "asteriskconf" "(/asterisk/.+|asterisk)\.conf$"
+
+BOOLEAN:   "\<(yes|no)\>"
+NUMBER:    "\<[0-9]+\>"
+PATH:      "^[[:space:]]*ast(agi|data|db|etc|key|log|mod|run|sbin|spool|varlib)dir[[:space:]]*=>.*$"
+KEYWORD:   "^[[:space:]]*ast(agi|data|db|etc|key|log|mod|run|sbin|spool|varlib)dir([[:space:]]|=)"
+PATH:      "^[[:space:]]*#(try)?include[[:space:]]+.+$"
+FUNCTION:  "^[[:space:]]*#exec[[:space:]]+.+$"
+MACRO:     "^[[:space:]]*#((try)?include|exec)[[:space:]]"
+
+# Section or template headers coloring
+MACRO:     "^[[:space:]]*\[[^][[:space:];]+\]\([^)]*\)"
+SECTION:   "^[[:space:]]*\[[^][[:space:];]+\]"
+MACRO:     "^[[:space:]]*\[[^][[:space:];]+\]\(![^)]*\)"
+SECTION:   "^[[:space:]]*\[[^][[:space:];]+\]([[:space:]]|;|$)"
+OPERATOR:  "[)(]"
+
+# Dialplan coloring
+JUMP:      "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*[^,]+,[^,]+"
+ATTRIBUTE: "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*[^_][^,]*"
+REGEXP:    "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*[^,/]+/_[^,]+"
+OPERATOR:  "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*[^_][^,/]*/"
+ATTRIBUTE: "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*[^_][^/,]*"
+OPERATOR:  "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*_[^,/]+/"
+REGEXP:    "^[[:space:]]*exten[[:space:]]*=>[[:space:]]*_[^,/]+"
+TYPE:      "^[[:space:]]*exten[[:space:]]*=>"
+JUMP:      "^[[:space:]]*same[[:space:]]*=>[[:space:]]*[^,]+"
+TYPE:      "^[[:space:]]*same[[:space:]]*=>"
+ATTRIBUTE: "^[[:space:]]*ignorepat[[:space:]]*=>[[:space:]]*[^[:space:];]+"
+KEYWORD:   "^[[:space:]]*ignorepat[[:space:]]*=>[[:space:]]*"
+SECTION:   "^[[:space:]]*include[[:space:]]*=>[[:space:]]*[^[:space:],;]+"
+KEYWORD:   "^[[:space:]]*include[[:space:]]*=>"
+KEYWORD:   "^[[:space:]]*[le]?switch[[:space:]]*=>"
+
+FUNCTION:  "\$\[[^]]+\]"
++WHITESPACE
+OPERATOR:  "=>|\(\+\)|[=,?:]"
+STRING:    ""[^"]*""
+VARIABLE:  "\$\{[^}]+\}"
+COMMENT:   start=";--" end="--;"
+COMMENT:   ";.*$"
++LINT
