@@ -4,7 +4,7 @@ s|^KEYWORD:|color brightgreen|
 s|^~KEYWORD:|icolor brightgreen|
 s|^JUMP:|color brightgreen|
 s|^MACRO:|color blue|
-s|^TYPE:|color brightblue|
+s|^TYPE:|color cyan|
 s|^STRING:|color yellow|
 s|^BOOLEAN:|color brightcyan|
 s|^NUMBER:|color red|
