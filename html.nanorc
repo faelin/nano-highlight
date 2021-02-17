@@ -87,8 +87,9 @@ COMMENT:    start="<!--" end="-->"
 COMMENT:    "<!(doctype|DOCTYPE)[^>]*>"
 CHARREF:    "&#([0-9]+|[Xx][0-9A-Fa-f]+);"
 # This section for character entity references is generated automatically.
-# See included generate-rules_for.sh script file for more info on how this process
-# can be repeated should the list of character entities be changed in the future
+# See included generate-rules-for-web-highlighting.sh script file (found in the scripts/
+# directory) for more info on how this process can be repeated should
+# the list of character entities be changed in the future
 CHARREF:    "&(Aacute|aacute|Abreve|abreve|ac|acd|acE|Acirc|acirc|acute|Acy|acy|AElig|aelig|af|Afr|afr|Agrave|agrave);"
 CHARREF:    "&(alefsym|aleph|Alpha|alpha|Amacr|amacr|amalg|AMP|amp|And|and|andand|andd|andslope|andv|ang|ange|angle);"
 CHARREF:    "&(angmsd|angmsdaa|angmsdab|angmsdac|angmsdad|angmsdae|angmsdaf|angmsdag|angmsdah|angrt|angrtvb|angrtvbd);"

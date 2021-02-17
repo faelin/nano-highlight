@@ -55,8 +55,9 @@ KEYWORD:    "\<(wait|wider|x-(fast|high|loud|s?low|soft)|xx?-(large|small))([[:s
 #
 ~ESCAPE:    "(^|\*/|[[:space:]:])(currentColor|transparent)([[:space:];]|/\*|$)"
 # The following section for CSS3 colors is generated automatically.
-# See included generate-rules-for.sh script file for more info on how this process
-# can be repeated should the list of CSS3 colors be changed in the future
+# See included generate-rules-for-web-highlighting.sh script file (found in the scripts/
+# directory) for more info on how this process can be repeated should
+# the list of CSS3 colors be changed in the future
 ~ESCAPE:    "(^|\*/|[[:space:]:])(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black)([[:space:];]|/\*|$)"
 ~ESCAPE:    "(^|\*/|[[:space:]:])(blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue)([[:space:];]|/\*|$)"
 ~ESCAPE:    "(^|\*/|[[:space:]:])(chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan)([[:space:];]|/\*|$)"
