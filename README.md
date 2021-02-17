@@ -14,6 +14,7 @@ Here is a brief list of what supported formats changed in this repository compar
 ### Added language highlightings
 
   * LogRotate configuration files
+  * NanorcTheme (theme files used in this project)
 
 ### Improved highlighting granularity
 
