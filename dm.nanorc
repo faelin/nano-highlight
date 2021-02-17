@@ -1,0 +1,16 @@
+syntax "dm" "\.dme?$"
+
++FUNCTION
+MACRO:    "\<[A-Z_][0-9A-Z_]+\>"
+TYPE:     "\<(datum|atom|area|turf|obj|mob)\>"
+KEYWORD:  "\<(static|const|global|for|if|while|do|else|switch|var|return|try|throw|catch|new|del)\>"
+JUMP:     "\<(break|continue)\>"
+OPERATOR: "[-+/*=<>?:!~%&|^]"
+NUMBER:   "\<([0-9]+|0x[0-9a-fA-F]*)\>|'.'"
+MACRO:    "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error)"
+STRING:   ""(\\.|[^"])*""
+STRING:   "'(\\.|[^'])*'"
+
++CCOMMENT
++TODO
++LINT

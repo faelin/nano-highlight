@@ -14,6 +14,8 @@ Here is a brief list of what supported formats changed in this repository compar
 ### Added language highlighting
 
   * CronTab
+  * DM
+  * Erlang
   * LogRotate configuration files
   * NanorcTheme (theme files used in this project)
   * /etc/group, /etc/passwd, /etc/shadow
@@ -29,6 +31,7 @@ Here is a brief list of what supported formats changed in this repository compar
 ### Minor improvements
 
   * JavaScript scripts
+  * Markdown texts
   * Shell scripts
 
 Installation
