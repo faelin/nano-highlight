@@ -7,26 +7,11 @@ PLAIN:     start="\{" end="\}"
 #
 # CSS3 Selectors
 #
-~TAG:       "(^|\*/|[][:space:],}>+~()])(a|abbr|acronym|address|area|article|applet|aside)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(audio|b|base|bd[io]|bgsound|big|blink|blockquote)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(body|(no)?br|button|canvas|caption|center|cite|code)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])((col)?group|command|content|datalist|d[dlt]|del)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(details|dfn|dialog|dir|div|em|embed|eventsource)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(fieldset|figcaption|figure|(base)?font|footer|form)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(frame(set)?|h[1-6]|head(er)?|hgroup|hr|html|i|iframe)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(img|input|ins|isindex|kbd|keygen|label|legend|li)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(link|listing|main|map|mark|marquee|menu(item)?|meta)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(meter|nav|noframes|object|[ou]l|optgroup|option)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(output|p|param|plaintext|pre|progress|q|r[pt]|ruby|s)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(samp|(no)?script|section|select|shadow|small|source)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(spacer|span|strike|strong|style|su[bp]|summary|table)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(t(body|foot|head)|t[dhr]|template|textarea|time)([[:space:],#.{[>+~:)]|/\*|$)"
-~TAG:       "(^|\*/|[][:space:],}>+~()])(title|track|tt|u|var|video|wbr|xmp)([[:space:],#.{[>+~:)]|/\*|$)"
+~TAG:       "(^|\*/|[][:space:],}>+~()])(a|abbr|acronym|address|area|article|applet|aside|audio|b|base|bd[io]|bgsound|big|blink|blockquote|body|(no)?br|button|canvas|caption|center|cite|code|(col)?group|command|content|datalist|d[dlt]|del|details|dfn|dialog|dir|div|em|embed|eventsource|fieldset|figcaption|figure|(base)?font|footer|form|frame(set)?|h[1-6]|head(er)?|hgroup|hr|html|i|iframe|img|input|ins|isindex|kbd|keygen|label|legend|li|link|listing|main|map|mark|marquee|menu(item)?|meta|meter|nav|noframes|object|[ou]l|optgroup|option|output|p|param|plaintext|pre|progress|q|r[pt]|ruby|s|samp|(no)?script|section|select|shadow|small|source|spacer|span|strike|strong|style|su[bp]|summary|table|t(body|foot|head)|t[dhr]|template|textarea|time|title|track|tt|u|var|video|wbr|xmp)([[:space:],#.{[>+~:)]|/\*|$)"
 ~TAG:       "(^|[][:space:],}])\*([[:space:],{:[]|$)"
 
 OPERATOR:   "[[:space:]]*[>+~][[:space:]]*"
-~OPERATOR:  ":(active|checked|(dis|en)abled|empty|(first|last|only)-(child|of-type)|focus|hover|in-range|link)\>"
-~OPERATOR:  ":(optional|out-of-range|read-(only|write)|required|root|selection|target|visited|(in)?valid|visited)\>"
+~OPERATOR:  ":(active|checked|(dis|en)abled|empty|(first|last|only)-(child|of-type)|focus|hover|in-range|link|optional|out-of-range|read-(only|write)|required|root|selection|target|visited|(in)?valid|visited)\>"
 VARIABLE:   "[.#][A-Za-z_][A-Za-z0-9_-]*"
 OPERATOR:   "::(after|before|first-(letter|line)|selection)\>"
 color red   "\!important[[:space:]]*(;|/\*|$)"
@@ -35,21 +20,7 @@ color red   "\!important[[:space:]]*(;|/\*|$)"
 # CSS3 Keywords (predefined property-values mostly)
 #
 SECTION:    "(^|}|\*/)[[:space:]]*@(font-face|media)\>"
-KEYWORD:    "\<(above|absolute|always|armenian|auto|avoid|baseline|behind|below|bidi-override|blink)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(block|bold(er)?|bottom|break-word|capitalize|center(-left|-right)?|circle|collapse)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(cjk-ideographic|(no-)?(close|open)-quote|compact|continuous|crop|cross(hair)?)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<((extra-|semi-|ultra-)?(condensed|expanded)|cursive|dashed|default)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(decimal(-leading-zero)?|digits|disc|dotted|double|embed|fantasy|far-(left|right))([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(fast(er)?|fixed|georgian|groove|hebrew|help|hide|high(er)?|(hirag|katak)ana(-iroha)?)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(inherit|initial|inline(-block|-table)?|(in|out)(set|side)|invert|italic|justify|landscape|larger?)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<((left|right)(-side|wards)?|level|lighter|line-through|list-item|loud|low(er)?|ltr)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<((lower|upper)(-alpha|-greek|-latin|-roman|case)|marker|medium|middle|mix|monospace)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(move|narrower|none|normal|(no|pre-)wrap|oblique|once|overline|pointer)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(portait|relative|(no-)?repeat|repeat-[xy]|([ew]|[ns][ew]?)-resize|ridge|rlt|run-in)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(scroll|separate|(sans-)?serif|show|silent|slow(er)?|small(er)?|small-caps|soft|solid)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(spell-out|square|static|sub|super|text(-bottom|-top)?|thick|thin|top)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(table-(caption|cell|(column|row)(-group)?|(footer|header)-group)|underline|unset|visible)([[:space:];,]|/\*|$)"
-KEYWORD:    "\<(wait|wider|x-(fast|high|loud|s?low|soft)|xx?-(large|small))([[:space:];,]|/\*|$)"
+KEYWORD:    "\<(above|absolute|always|armenian|auto|avoid|baseline|behind|below|bidi-override|blink|block|bold(er)?|bottom|break-word|capitalize|center(-left|-right)?|circle|collapse|cjk-ideographic|(no-)?(close|open)-quote|compact|continuous|crop|cross(hair)?|(extra-|semi-|ultra-)?(condensed|expanded)|cursive|dashed|default|decimal(-leading-zero)?|digits|disc|dotted|double|embed|fantasy|far-(left|right)|fast(er)?|fixed|georgian|groove|hebrew|help|hide|high(er)?|(hirag|katak)ana(-iroha)?|inherit|initial|inline(-block|-table)?|(in|out)(set|side)|invert|italic|justify|landscape|larger?|(left|right)(-side|wards)?|level|lighter|line-through|list-item|loud|low(er)?|ltr|(lower|upper)(-alpha|-greek|-latin|-roman|case)|marker|medium|middle|mix|monospace|move|narrower|none|normal|(no|pre-)wrap|oblique|once|overline|pointer|portait|relative|(no-)?repeat|repeat-[xy]|([ew]|[ns][ew]?)-resize|ridge|rlt|run-in|scroll|separate|(sans-)?serif|show|silent|slow(er)?|small(er)?|small-caps|soft|solid|spell-out|square|static|sub|super|text(-bottom|-top)?|thick|thin|top|table-(caption|cell|(column|row)(-group)?|(footer|header)-group)|underline|unset|visible|wait|wider|x-(fast|high|loud|s?low|soft)|xx?-(large|small))([[:space:];,]|/\*|$)"
 
 #
 # CSS3 Color Keywords
@@ -139,7 +110,7 @@ KEYWORD:    "\<(wait|wider|x-(fast|high|loud|s?low|soft)|xx?-(large|small))([[:s
 ~URL:       "(^|\*/|[[:space:]:])url\([^)]+\)([[:space:];}]|$)"
 ~FUNCTION:  "(^|\*/|[[:space:]:])(attr|calc|(repeating-)?(linear|radial)-gradient|(rgb|hsl)a?)\([^)]+\)([[:space:];}]|$)"
 ~FUNCTION:  "(^|\*/|[[:space:]:])url\("
-+WHITESPACES
++WHITESPACE
 ~OPERATOR:  ":nth-(last-)?(child|of-type)\([[:space:]]*([+-]?[0-9]+(n[[:space:]]*\+[[:space:]]*[0-9]+)?|odd|even)[[:space:]]*\)"
 ~OPERATOR:  ":lang\([[:space:]]*[A-Za-z]{2}(-[A-Za-z]{2})?[[:space:]]*\)"
 ATTRIBUTE:  "\[[^][]*\]"

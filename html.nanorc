@@ -17,30 +17,14 @@ WARNING:    "&"
 # Explicitly-erroneous attributes
 ~WARNING:   "[[:space:]]*\<(pubdate|seamless)[[:space:]]*([=>]|$)"
 # Global attributes
-~ATTRIBUTE: "[[:space:]]*\<(accesskey|contenteditable|contextmenu|dir|draggable|dropzone)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(hidden|id|lang|spellcheck|style|tabindex|title|translate)[[:space:]]*([=>]|$)"
+~ATTRIBUTE: "[[:space:]]*\<(accesskey|contenteditable|contextmenu|dir|draggable|dropzone|hidden|id|lang|spellcheck|style|tabindex|title|translate)[[:space:]]*([=>]|$)"
 ATTRIBUTE:  "[[:space:]]*\<[Dd][Aa][Tt][Aa]-[a-z0-9_.]+(-[a-z0-9_.]+)*[[:space:]]*([=>]|$)"
 # Element-specific attributes
-~ATTRIBUTE: "[[:space:]]*\<(accept(-charset)?|action|alt|async|auto(complete|focus|play)|challenge)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(charset|checked|cite|class|(col|row)(s|span)|content|controls|coords)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(crossorigin|data|datetime|default|defer|dirname|disabled|download)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(enctype|for|form(action)?|headers|height|high|href(lang)?|http-equiv)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(icon|ismap|keytype|kind|label|list|loop|low|manifest|max(length)?)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(media|method|min|multiple|muted|name|novalidate|open|optimum|pattern)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(placeholder|poster|preload|radiogroup|readonly|rel|required|reversed)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(sandbox|scoped?|selected|shape|sizes?|span|src(doc|lang)?|start|step)[[:space:]]*([=>]|$)"
-~ATTRIBUTE: "[[:space:]]*\<(target|type(mustmatch)?|usemap|value|width|wrap)[[:space:]]*([=>]|$)"
+~ATTRIBUTE: "[[:space:]]*\<(accept(-charset)?|action|alt|async|auto(complete|focus|play)|challenge|charset|checked|cite|class|(col|row)(s|span)|content|controls|coords|crossorigin|data|datetime|default|defer|dirname|disabled|download|enctype|for|form(action)?|headers|height|high|href(lang)?|http-equiv|icon|ismap|keytype|kind|label|list|loop|low|manifest|max(length)?|media|method|min|multiple|muted|name|novalidate|open|optimum|pattern|placeholder|poster|preload|radiogroup|readonly|rel|required|reversed|sandbox|scoped?|selected|shape|sizes?|span|src(doc|lang)?|start|step|target|type(mustmatch)?|usemap|value|width|wrap)[[:space:]]*([=>]|$)"
 # Attributes deprecated / not supported in HTML5
 ~PLAIN:     "[[:space:]]*\<(align|bgcolor|border|color|mediagroup)[[:space:]]*([=>]|$)"
 # Event attributes
-~FUNCTION:  "[[:space:]]*\<on(abort|afterprint|before(print|unload)|blur|canplay(through)?)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on((cue|duration|hash|rate|volume)?change|(dbl)?click|contextmenu|copy)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(cut|drag(end|enter|leave|over|start)?|drop|emptied|ended|error|focus)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(input|invalid|key(down|press|up)|load(ed(meta)?data|start)?)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(mouse(down|move|out|over|up|wheel)|(off|on)line|page(hide|show))[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(paste|pause|play(ing)?|popstate|progress|reset|resize|scroll|search)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(seek(ed|ing)|select|show|stalled|storage|submit|suspend|timeupdate)[[:space:]]*(=|$)"
-~FUNCTION:  "[[:space:]]*\<on(toggle|unload|waiting|wheel)[[:space:]]*(=|$)"
+~FUNCTION:  "[[:space:]]*\<on(abort|afterprint|before(print|unload)|blur|canplay(through)?|(cue|duration|hash|rate|volume)?change|(dbl)?click|contextmenu|copy|cut|drag(end|enter|leave|over|start)?|drop|emptied|ended|error|focus|input|invalid|key(down|press|up)|load(ed(meta)?data|start)?|mouse(down|move|out|over|up|wheel)|(off|on)line|page(hide|show)|paste|pause|play(ing)?|popstate|progress|reset|resize|scroll|search|seek(ed|ing)|select|show|stalled|storage|submit|suspend|timeupdate|toggle|unload|waiting|wheel)[[:space:]]*(=|$)"
 
 
 #
@@ -50,27 +34,18 @@ ATTRIBUTE:  "[[:space:]]*\<[Dd][Aa][Tt][Aa]-[a-z0-9_.]+(-[a-z0-9_.]+)*[[:space:]
 # Obsolete elements
 ~WARNING:   "</?(bgsound|blink|command|eventsource|listing|nobr|plaintext|spacer|xmp)([[:space:]]+>?|>|[[:space:]]*$)"
 # Normal elements valid in HTML5
-~TAG:       "</?(a|abbr|address|article|aside|audio|b|bd[io]|blockquote|body|button)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(canvas|caption|cite|code|colgroup|datalist|d[dlt]|del|details|dfn)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(dialog|div|em|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(hgroup|html|i|iframe|ins|kbd|label|legend|li|main|map|mark|menu|meter)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(nav|object|[ou]l|optgroup|option|output|p|pre|progress|q|r[pt]|ruby|s)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(samp|(no)?script|section|select|small|span|strong|style|su[bp])([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(summary|table|t(body|foot|head)|t[dhr]|template|textarea|time|title)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "</?(u|var|video)([[:space:]]+>?|>|[[:space:]]*$)"
+~TAG:       "</?(a|abbr|address|article|aside|audio|b|bd[io]|blockquote|body|button|canvas|caption|cite|code|colgroup|datalist|d[dlt]|del|details|dfn|dialog|div|em|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hgroup|html|i|iframe|ins|kbd|label|legend|li|main|map|mark|menu|meter|nav|object|[ou]l|optgroup|option|output|p|pre|progress|q|r[pt]|ruby|s|samp|(no)?script|section|select|small|span|strong|style|su[bp]|summary|table|t(body|foot|head)|t[dhr]|template|textarea|time|title|u|var|video)([[:space:]]+>?|>|[[:space:]]*$)"
 # Elements for which end tag is forbidden
-~TAG:       "<(area|base|br|col|embed|hr|img|input|keygen)([[:space:]]+>?|>|[[:space:]]*$)"
-~TAG:       "<(link|menuitem|meta|param|source|track|wbr)([[:space:]]+>?|>|[[:space:]]*$)"
+~TAG:       "<(area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)([[:space:]]+>?|>|[[:space:]]*$)"
 # Elements deprecated in HTML5
-~PLAIN:     "</?(acronym|applet|big|center|content|dir|(base)?font)([[:space:]]+>?|>|[[:space:]]*$)"
-~PLAIN:     "</?(frame(set)?|isindex|marquee|noframes|shadow|strike|tt)([[:space:]]+>?|>|[[:space:]]*$)"
+~PLAIN:     "</?(acronym|applet|big|center|content|dir|(base)?font|frame(set)?|isindex|marquee|noframes|shadow|strike|tt)([[:space:]]+>?|>|[[:space:]]*$)"
 
 #
 # Strings and values
 #
 STRING:     "=[[:space:]]*[]A-Za-z0-9!#$%()*+,./:;?@[\^_{|}~-][]A-Za-z0-9!"#$%'()*+,./:;?@[\^_{|}~-]*"
 OPERATOR:   "="
-+WHITESPACES
++WHITESPACE
 STRING:     ""[^"]*"|'[^']*'"
 PLAIN:      start=">" end="<"
 TAG:        "[<>]"
