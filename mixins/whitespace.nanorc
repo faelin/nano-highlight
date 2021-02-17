@@ -1,0 +1,2 @@
+# Make white spaces plain again
+PLAIN: "[[:space:]]+"
