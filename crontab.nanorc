@@ -1,0 +1,32 @@
+syntax "crontab" "/crontab$|/cron\.d/[^/]+$"
+
+~OPERATOR: "^[[:space:]]*([0-5]?[0-9]([-,][0-5]?[0-9])*|\*)(/[0-9]+)?[[:space:]]+(([01]?[0-9]|2[0-3])([-,]([01]?[0-9]|2[0-3]))*|\*)(/[0-9]+)?[[:space:]]+(([0-2]?[0-9]|3[01])([-,]([0-2][0-9]|3[01]))*|\*)(/[0-9]+)?[[:space:]]+(((0?[1-9]|1[0-2])([-,](0?[1-9]|1[0-2]))*|\*)(/[0-9]+)?|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[[:space:]]+(([0-7]([-,][0-7])*|\*)(/[0-7]+)?|sun|mon|tue|wed|thu|fri|sat)[[:space:]]+"
+~KEYWORD:  "[[:space:]](jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|sun|mon|tue|wed|thu|fri|sat)[[:space:]]"
+~KEYWORD:  "^[[:space:]]*@(annually|daily|hourly|midnight|monthly|reboot|weekly|yearly)[[:space:]]+"
+OPERATOR:  "^[[:space:]]*@"
+PLAIN:     "^[[:space:]]*@([^A-Za-z]|$)"
+OPERATOR:  "\<test[[:space:]]+-[snzbcdefgGhkLOprsStuwx]([[:space:]]+|$)"
+FUNCTION:  "\<(echo|exit|export|let|local|read|return|set|shift|source|umask|unset)\>"
+FUNCTION:  "\<(alias|bg|bind|break|builtin|cd|command|compgen|complete|continue|dirs|disown|enable|eval|exec)\>"
+FUNCTION:  "\<(fc|fg|getopts|hash|help|history|jobs|kill|logout|popd|printf|pushd|pwd|shopt|suspend)\>"
+FUNCTION:  "\<(test|times|trap|type|ulimit|unalias|wait)\>"
+
+# Unkeywordify commandline arguments
+PLAIN:     "(^|[[:space:]])--?(alias|apr|aug|bg|bind|break|builtin|case|cd|command|compgen|complete|continue|dec)\>"
+PLAIN:     "(^|[[:space:]])--?(dirs|disown|do|done|echo|elif|else|enable|esac|eval|exec|exit|export|fc|feb|fg|fi|for)\>"
+PLAIN:     "(^|[[:space:]])--?(fri|function|getopts|hash|help|history|if|in|jan|jobs|jul|jun|kill|let|local|logout)\>"
+PLAIN:     "(^|[[:space:]])--?(mar|may|mon|nov|oct|popd|printf|pushd|pwd|read|return|sat|select|sep|set|shift|shopt)\>"
+PLAIN:     "(^|[[:space:]])--?(source|sun|suspend|test|then|thu|time|times|trap|tue|type|ulimit|umask|unalias|unset)\>"
+PLAIN:     "(^|[[:space:]])--?(until|wait|wed|while)\>"
+# Unkeywordify occurrences in paths
+PLAIN:     "/local\>"
+PLAIN:     "(^|[[:space:]])local/"
++WHITESPACE
+
+OPERATOR:  "[{}()<>!=%&|;`]|-(eq|ne|gt|lt|ge|le)\>"
+
+NUMBER:    "\<[0-9]+\>"
+STRING:    ""[^"]*"|'[^']*'"
+ESCAPE:    "\\%"
+COMMENT:   "^[[:space:]]*#.*$"
++LINT

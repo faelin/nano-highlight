@@ -11,12 +11,13 @@ Also included is a simple theming system, where all `color` statements (e.g. `co
 
 Here is a brief list of what supported formats changed in this repository compared to the source one.
 
-### Added language highlightings
+### Added language highlighting
 
+  * CronTab
   * LogRotate configuration files
   * NanorcTheme (theme files used in this project)
 
-### Improved highlighting granularity
+### Improved highlighting themes
 
   * CSS
   * HTML
