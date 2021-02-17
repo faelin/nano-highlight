@@ -1,6 +1,7 @@
 syntax "perl" "\.(pl|pm|t|PL)$"
-
 header "^#!(.*/)?perl[-0-9._]*"
+
++RESETALL
 
 # This variable type doesn't get interpolated
 VARIABLE: "__[A-Z]+__"

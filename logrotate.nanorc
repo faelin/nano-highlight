@@ -1,6 +1,7 @@
 syntax "logrotate" "/etc/logrotate\.(conf|d/[^/]+)$"
 header "^[[:space:]]*(/var/log/[^[:space:]]+\.log|"/var/log/(\\"|[^"])+\.log"|'/var/log/(\\'|[^'])+\.log')"
 
++RESETALL
 KEYWORD:  "^[[:space:]]*(hourly|daily|weekly|monthly|yearly)[[:space:]]*$"
 KEYWORD:  "^[[:space:]]*(no)?(copy(truncate)?|create|(delay)?compress)[[:space:]]*$"
 KEYWORD:  "^[[:space:]]*(no)?(dateext|missingok|sharedscripts|shred)[[:space:]]*$"

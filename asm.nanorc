@@ -2,6 +2,7 @@
 syntax "asm" "\.(S|s|asm)$"
 magic "[Aa]ssembl(y|er)"
 
++RESETALL
 MACRO: "\<[A-Z_]{2,}\>"
 SECTION: "\<(data|subsection|text)\>"
 KEYWORD: "\<(align|file|globl|global|hidden|section|size|type|weak)\>"

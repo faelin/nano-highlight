@@ -1,6 +1,7 @@
 syntax "makefile" "([Mm]akefile|\.ma?k)$"
 header "^#!.*/(env +)?[bg]?make( |$)"
 
++RESETALL
 KEYWORD:  "\<(ifeq|ifdef|ifneq|ifndef|else|endif)\>"
 KEYWORD:  "^(export|include|override)\>"
 SECTION:  "^[^:=	]+:"

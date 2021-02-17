@@ -1,6 +1,7 @@
 syntax "ini" "\.(ini|desktop|lfl|override)$" "(mimeapps\.list|pinforc|setup\.cfg)$" "weechat/.+\.conf$"
 header "^\[[A-Za-z]+\]$"
 
++RESETALL
 +BOOLEAN
 +INI
 OPERATOR: "[=;]"

@@ -1,6 +1,7 @@
 syntax "awk" "\.awk$"
 header "^#!.*bin/(env +)?awk( |$)"
 
++RESETALL
 VARIABLE: "\$[A-Za-z0-9_!@#$*?-]+"
 VARIABLE: "\<(ARGC|ARGIND|ARGV|BINMODE|CONVFMT|ENVIRON|ERRNO|FIELDWIDTHS)\>"
 VARIABLE: "\<(FILENAME|FNR|FS|IGNORECASE|LINT|NF|NR|OFMT|OFS|ORS)\>"

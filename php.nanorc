@@ -1,6 +1,7 @@
 syntax "php" "\.php[2345s~]?$"
 header "^(//|/\*).*[Pp][Hh][Pp]|<\?php\>"
 
++RESETALL
 OPERATOR: "[-+/*=<>?:!~%&|]"
 SECTION:  "(<\?(php)?|\?>)"
 +FUNCTION

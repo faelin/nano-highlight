@@ -1,5 +1,6 @@
 syntax "asteriskconf" "(/asterisk/.+|asterisk)\.conf$"
 
++RESETALL
 BOOLEAN:   "\<(yes|no)\>"
 NUMBER:    "\<[0-9]+\>"
 PATH:      "^[[:space:]]*ast(agi|data|db|etc|key|log|mod|run|sbin|spool|varlib)dir[[:space:]]*=>.*$"

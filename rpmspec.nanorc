@@ -1,5 +1,6 @@
 syntax "rpmspec" "\.spec$" "\.rpmspec$"
 
++RESETALL
 KEYWORD:  "\<(Icon|ExclusiveOs|ExcludeOs):"
 KEYWORD:  "\<(BuildArch|BuildArchitectures|ExclusiveArch|ExcludeArch):"
 KEYWORD:  "\<(Conflicts|Obsoletes|Provides|Requires|Requires\(.*\)|Enhances|Suggests|BuildConflicts|BuildRequires|Recommends|PreReq|Supplements):"

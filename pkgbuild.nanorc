@@ -1,5 +1,6 @@
 syntax "pkgbuild" "PKGBUILD$" "\.install$"
 
++RESETALL
 FUNCTION: "^[A-Za-z0-9_+-]+[[:space:]]*\(\)"
 KEYWORD:  "\<(case|do|done|elif|else|esac|fi|for|function|if)\>"
 KEYWORD:  "\<(in|select|then|time|until|while)\>"

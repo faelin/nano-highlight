@@ -1,5 +1,7 @@
 syntax "etcgroup" "/etc/group-?$"
 
++RESETALL
+
 # Group List
 VARIABLE: "^[^:]*:[^:]*:[^:]*:.*$"
 PLAIN:    ","

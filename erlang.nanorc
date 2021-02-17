@@ -1,6 +1,7 @@
 syntax "erlang" "\.[hecyx]rl$"
 header "^#!.*escript"
 
++RESETALL
 VARIABLE: "\<[A-Z_][a-zA-Z0-9_]*\>"
 FUNCTION: "\<([a-z][a-zA-Z0-9_]*[[:space:]]*:[[:space:]]*)?[a-z][a-zA-Z0-9_]*[[:space:]]*[(]"
 PLAIN:    "[(]"

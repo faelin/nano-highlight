@@ -1,5 +1,6 @@
 syntax "mpdconf" "mpd\.conf$"
 
++RESETALL
 KEYWORD: "\<(user|group|bind_to_address|host|port|plugin|name|type)\>"
 KEYWORD: "\<((music|playlist)_directory|(db|log|state|pid|sticker)_file)\>"
 SECTION: "^(input|audio_output|decoder)[[:space:]]*\{|\}"

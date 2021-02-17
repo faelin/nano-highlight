@@ -1,5 +1,6 @@
 syntax "patch" "\.(patch|diff)$"
 
++RESETALL
 color brightgreen "^\+.*"
 color green "^\+\+\+.*"
 color brightred "^-.*"

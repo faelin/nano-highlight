@@ -1,5 +1,6 @@
 syntax "etcpasswd" "/etc/passwd-?$"
 
++RESETALL
 OPERATOR: ":[^:]*:[^:]*$"
 PATH:     "[^:]*:[^:]*$"
 OPERATOR: ":[^:]*$"

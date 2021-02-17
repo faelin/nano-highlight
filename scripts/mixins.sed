@@ -22,8 +22,12 @@
     r mixins/ini.nanorc
     d
 }
+/^+RESETALL\>/ {
+    r mixins/resetall.nanorc
+    d
+}
 /^+WHITESPACE/ {
-    r mixins/whitespaces.nanorc
+    r mixins/whitespace.nanorc
     d
 }
 /^+TODO/ {

@@ -1,6 +1,8 @@
 syntax "html" "\.html?$"
 header "<!doctype html"
 
++RESETALL
+
 # Everything inside angle brackets is erroneous initially
 # This will be fixed later by correct syntax
 WARNING:    start="<" end=">"

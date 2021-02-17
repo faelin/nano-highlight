@@ -1,5 +1,6 @@
 syntax "apacheconf" "httpd\.conf|mime\.types|\.conf$" "(\.|/)vhost\.conf$"
 
++RESETALL
 SECTION:   start="<" end=">"
 
 DELIMITER: "[<>]|(<\\)"

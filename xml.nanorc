@@ -1,6 +1,7 @@
 syntax "xml" "\.([jrs]html?|sgml?|xml|opml|xslt?|plist)$"
 header "<\?xml"
 
++RESETALL
 SECTION:  start="<" end=">"
 KEYWORD:  " [a-z_-]+="
 +STRING

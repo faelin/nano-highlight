@@ -1,6 +1,7 @@
 syntax "nginx" "nginx.*\.conf$" "\.nginx$"
 header "^(server|upstream)[a-z ]*\{$"
 
++RESETALL
 NUMBER:   "(^|[[:space:]])([0-9]+(ms|[kKmMshdwy])?[[:space:]]*?)+($|;)"
 KEYWORD:  "(^|[[:space:]{;])(accept_mutex(_delay)?|access_log|add_(header|(after|before)_body))([[:space:]]|$)"
 KEYWORD:  "(^|[[:space:]{;])(addition_types|aio(_write)?|alias|allow|ancient_browser(_value)?)([[:space:]]|$)"

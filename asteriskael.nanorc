@@ -1,5 +1,6 @@
 syntax "asteriskael" "\.ael$"
 
++RESETALL
 NUMBER:    "\<[0-9]+\>"
 SECTION:   "^[[:space:]]*context[[:space:]]+[^[:space:]{;]+"
 SECTION:   start="\<includes[[:space:]]*\{" end="\}"

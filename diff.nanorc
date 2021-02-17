@@ -1,5 +1,6 @@
 syntax "diff" "\.diff$"
 
++RESETALL
 color brightred   "^[<\-].*"
 color brightgreen "^[>+].*"
 COMMENT: "^ .*"

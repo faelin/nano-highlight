@@ -1,5 +1,6 @@
 syntax "dm" "\.dme?$"
 
++RESETALL
 +FUNCTION
 MACRO:    "\<[A-Z_][0-9A-Z_]+\>"
 TYPE:     "\<(datum|atom|area|turf|obj|mob)\>"

@@ -1,7 +1,7 @@
 syntax "coffeescript" "\.coffee$"
 header "^#!.*/(env +)?coffee"
 
-OPERATOR: "[!&|=\/*+\-\<\>]|\<(and|or|is|isnt|not)\>"
++RESETALL
 OPERATOR: "[\-!&|=/*+\<\>]|\<(and|or|is|isnt|not)\>"
 FUNCTION: "[A-Za-z_][A-Za-z0-9_]*:[[:space:]]*(->|\()" "->"
 PLAIN:    "[()]"

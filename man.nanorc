@@ -1,5 +1,6 @@
 syntax "man" "\.[1-9]x?$"
 
++RESETALL
 SECTION: "\.(S|T)H.*$"
 KEYWORD: "\.(BR?|I[PR]?).*$"
 MACRO:   "\.(S|T)H|\.TP|\.(BR?|I[PR]?|PP)|\\f[BIPR]"

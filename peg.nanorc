@@ -1,5 +1,6 @@
 syntax "peg" "\.l?peg$"
 
++RESETALL
 KEYWORD:  "^[[:space:]]*[A-Za-z][A-Za-z0-9_]*[[:space:]]*<-"
 NUMBER:   "\^[+-]?[0-9]+"
 OPERATOR: "[-+*?^/!&]|->|<-|=>"

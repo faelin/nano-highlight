@@ -1,5 +1,6 @@
 syntax "nanorctheme" "\.nanorctheme$"
 
++RESETALL
 PLAIN:      "^[[:space:]]*PLAIN\>"
 FUNCTION:   "^[[:space:]]*FUNCTION\>"
 STRING:     "^[[:space:]]*STRING\>"

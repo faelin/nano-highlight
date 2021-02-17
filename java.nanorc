@@ -1,5 +1,7 @@
 syntax "java" "\.java$"
 
++RESETALL
+
 # Class
 SECTION:  "class +[A-Za-z0-9]+ *((implements|extends) +[A-Za-z0-9.]+)?"
 

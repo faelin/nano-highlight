@@ -1,5 +1,6 @@
 syntax "go" "\.go$"
 
++RESETALL
 +FUNCTION
 FUNCTION: "\<(append|cap|close|complex|copy|delete|imag|len)\>"
 FUNCTION: "\<(make|new|panic|print|println|protect|real|recover)\>"

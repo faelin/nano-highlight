@@ -1,5 +1,6 @@
 syntax "KickStart" "\.ks$" "\.kickstart$"
 
++RESETALL
 SECTION:  "%[a-z]+"
 KEYWORD:  "^[[:space:]]*(install|cdrom|text|graphical|volgroup|logvol|reboot|timezone|lang|keyboard|authconfig|firstboot|rootpw|user|firewall|selinux|repo|part|partition|clearpart|bootloader)"
 KEYWORD:  "--(name|mirrorlist|baseurl|utc)(=|\>)"

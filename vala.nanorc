@@ -1,5 +1,6 @@
 syntax "vala" "\.vala$"
 
++RESETALL
 TYPE:     "\<(float|double|bool|char|int|uint|short|long|void|(un)?signed)\>"
 +FUNCTION
 KEYWORD:  "\<(for|if|while|do|else|case|default|switch|try|throw|catch)\>"

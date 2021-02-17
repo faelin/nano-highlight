@@ -1,5 +1,6 @@
 syntax "lisp" "(emacs|zile)$" "\.(el|li?sp|scm|ss)$"
 
++RESETALL
 FUNCTION: "\([a-z-]+"
 OPERATOR: "\(([-+*/<>]|<=|>=)|'"
 PLAIN:    "\("

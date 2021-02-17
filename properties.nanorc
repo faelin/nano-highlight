@@ -1,5 +1,6 @@
 syntax "properties" "\.properties$"
 
++RESETALL
 KEYWORD:  "^[[:space:]]*[^#!]([^:= ]|\\[:= ])*[:= ]"
 OPERATOR: "[:=]"
 ESCAPE:   "\\([#!=: ]|$)"

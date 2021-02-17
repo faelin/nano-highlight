@@ -1,5 +1,6 @@
 syntax "pkg-config" "\.pc$"
 
++RESETALL
 KEYWORD:  "^(Name|Description|URL|Version|Conflicts|Cflags):"
 KEYWORD:  "^(Requires|Libs)(\.private)?:"
 OPERATOR: "="

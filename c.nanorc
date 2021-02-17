@@ -1,5 +1,6 @@
 syntax "c" "\.(c(c|pp|xx)?|C)$" "\.(h(h|pp|xx)?|H)$" "\.ii?$"
 
++RESETALL
 +FUNCTION
 MACRO:     "\<[A-Z_][0-9A-Z_]+\>"
 TYPE:      "\<(float|double|bool|char|int|short|long|void|(un)?signed)\>"

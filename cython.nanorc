@@ -1,5 +1,6 @@
 syntax "cython" "\.(pyx|pxd|pyi)$"
 
++RESETALL
 +FUNCTION
 KEYWORD:  "\<(as|assert|class|def|del|elif|else|except|exec|finally|for|from|global|if|import|lambda|pass|print|raise|try|while|with|yield|None)\>"
 KEYWORD:  "\<(DEF|ELIF|ELSE|IF)\>"

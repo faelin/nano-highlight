@@ -1,5 +1,6 @@
 syntax "xresources" "X(defaults|resources)$"
 
++RESETALL
 TYPE:     "^[[:alnum:]]+\*"
 VARIABLE: "\*[[:alnum:]]+\:"
 NUMBER:   "\<[0-9]+\>"
