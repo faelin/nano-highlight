@@ -1,9 +1,10 @@
 LANGS  = apacheconf asm awk c cmake coffeescript colortest crontab csharp css \
-         cython default diff dot email git glsl go html ini inputrc java \
-         javascript json keymap kickstart ledger lisp logrotate lua makefile \
-         man markdown mpdconf nanorc nanorctheme nginx patch peg perl php \
-         pkg-config pkgbuild po privoxy properties python R rpmspec ruby \
-         sed shell sql systemd tex vala vi xml xresources yaml yum
+         cython default diff dot email etcgroup etcpasswd etcshadow git glsl \
+         go html ini inputrc java javascript json keymap kickstart ledger \
+         lisp logrotate lua makefile man markdown mpdconf nanorc nanorctheme \
+         nginx patch peg perl php pkg-config pkgbuild po privoxy properties \
+         python R rpmspec ruby sed shell sql systemd tex vala vi xml xresources \
+         yaml yum
 
 MIXINS = $(wildcard mixins/*.nanorc)
 FILES  = $(addsuffix .nanorc, $(LANGS))

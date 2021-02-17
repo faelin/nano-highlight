@@ -16,6 +16,7 @@ Here is a brief list of what supported formats changed in this repository compar
   * CronTab
   * LogRotate configuration files
   * NanorcTheme (theme files used in this project)
+  * /etc/group, /etc/passwd, /etc/shadow
 
 ### Improved highlighting themes
 

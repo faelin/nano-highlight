@@ -1,0 +1,17 @@
+syntax "etcgroup" "/etc/group-?$"
+
+# Group List
+VARIABLE: "^[^:]*:[^:]*:[^:]*:.*$"
+PLAIN:    ","
+OPERATOR: "^[^:]*:[^:]*:[^:]*:"
+# Group ID
+PLAIN:    "^[^:]*:[^:]*:[^:]*"
+NUMBER:   "^[^:]*:[^:]*:[0-9]+"
+OPERATOR: "^[^:]*:[^:]*:"
+# Password
+WARNING:  "^[^:]*:[^:]*"
+OPERATOR: "^[^:]*:"
+# Groupname
+KEYWORD:  "^[^:]*"
+
++LINT
