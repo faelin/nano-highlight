@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function printUsage {
-    echo "generate-rules-for.sh html5-char-ent-refs|css3-colors"
+    echo "generate-rules-for-web-highlighting.sh html5-char-ent-refs|css3-colors"
     echo
 }
 
