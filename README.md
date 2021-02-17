@@ -4,26 +4,18 @@ nanorc syntax highlighting project
 Description
 -----------
 
-The syntax highlighting definitions that come bundled with nano are of
-pretty poor quality. This is an attempt at providing a good set of accurate
-syntax definitions to replace and expand the defaults, as well as provide
-standards for syntax highlighting across file types. This project
-is originally based
-on [tech4david's nano-highlight](https://github.com/tech4david/nano-highlight),
-which is in turn based on the original
-[nanorc project](https://github.com/nanorc/nanorc) (which is not maintained anymore).
+The syntax highlighting definitions that come bundled with nano are of pretty poor quality. This is an attempt at providing a good set of accurate syntax definitions to replace and expand the defaults, as well as provide standards for syntax highlighting across file types. This project 
+is originally based on [Thomas McCarthy's nano-highlight](https://github.com/twmccart/nano-highlight), which is in turn based on the earlier [nanorc-mac](https://github.com/richrad/nanorc-mac) project.
 
-Actually, syntax highlighting definitions from the original nanorc repo were
-not of the finest quality either, even when they were actively maintained
-(at least the ones changed/improved by me; although they are of course still
-better than the ones that come bundled with nano). Here is a brief list
-of what supported formats changed in this repository compared to the source one.
+Also included is a simple theming system, where all `color` statements (e.g. `color brightred`) have been replaced with token identifiers (e.g. `KEYWORD`, `OPERATOR`). These are replaced with colors according to the chosen theme at build time. This system helps to keep colors uniform accross different languages and also to keep the definitions clear and maintainable.
 
-### New format
+Here is a brief list of what supported formats changed in this repository compared to the source one.
+
+### Added language highlightings
 
   * LogRotate configuration files
 
-### Greatly improved formats
+### Improved highlighting granularity
 
   * CSS
   * HTML
